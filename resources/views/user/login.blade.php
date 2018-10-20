@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <link rel="icon" href="{{url('/')}}/images/grt-logo.png" sizes="16x16">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title >Đặng nhập</title>
     @includeif('backend.Layouts.partial._default_css')
     @includeif ('backend.Layouts.partial._angular')
@@ -13,6 +14,11 @@
     <link type="text/css" rel="stylesheet" href="{{ url('')}}/css/styleLogin.css">
     @yield('myCss')
     <script>
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
         var SiteUrl = '{{url("/")}}';
     </script>
 
@@ -23,7 +29,7 @@
 
 <body ng-app="ngApp" ng-cloak>
 
-    <div id="container" class="cls-container">
+    <div id="container" class="cls-container" ng-controller="loginCtrl">
 
         <!-- BACKGROUND IMAGE -->
         <!--===================================================-->
@@ -48,21 +54,21 @@
                     <p>Đăng nhập hệ thống</p>
                 </div>
                 <form id="loginForm" ng-enter="actions.login()">
-                    <div class="form-group">
-                      <input autocomplete="off" type="text" ng-model="data.params.account" class="form-control" id="account" placeholder="Email" name="account" value="{{old('account')}}" autofocus>
+                  <div class="alert alert-danger" ng-if="data.errorMsg">
+                        @{{data.errorMsg}}
                   </div>
-                  <p style="color:#F56262; padding: 5px;" ng-show="data.checks.checkAccount" >Tên tài khoản không được để trống<p>
+                    <div class="form-group">
+                      <input type="text" ng-model="data.params.email" class="form-control" id="email" placeholder="Email" name="email" value="{{old('email')}}" autofocus>
+                  </div>
+                  <p style="color:#F56262; padding: 5px;" ng-show="data.checks.checkEmail" >Tên tài khoản không được để trống<p>
                       <div class="form-group">
-                          <input autocomplete="off" type="password" ng-model="data.params.password" class="form-control" id="password" placeholder="Password" name="password">
+                          <input type="password" ng-model="data.params.password" class="form-control" id="password" placeholder="Password" name="password">
                       </div>
                       <p style="color:#F56262; padding: 5px;" ng-show="data.checks.checkPassword" >Mật khẩu không được để trống<p>
-                        {{--<div class="checkbox pad-btm text-left">
-                            <label class="form-checkbox form-icon remember_me" ng-class="{active: data.params.remember_me}" ><input  type="checkbox" ng-model="data.params.remember_me">@{{ 'Login.RememberAccount' | translate }}</label>
-                        </div> --}}
                         
                         {!! csrf_field() !!}
 
-                        <button class="btn btn-primary btn-lg btn-block" type="submit" ng-click="actions.login()">Đăng nhập</button>
+                        <button class="btn btn-primary btn-lg btn-block" type="button" ng-click="actions.login()">Đăng nhập</button>
                         
                     </form>
                 </div>
@@ -78,10 +84,12 @@
   @includeif('backend.Layouts.partial._default_js')
   @includeif('backend.Layouts.partial._js')
   @yield('myJs')
-  <!-- <script src="{{ url('') }}/js/factory/service/contactService.js"></script>
-  <script src="{{url('')}}/js/factory/service/userService.js"></script>
-  <script src="{{ URL::asset('/js/ctrl/loginCtrl.js') }}"></script>
-  <script src="{{ URL::asset('/js/ctrl/headerCtrl.js') }}"></script> -->
+    <script src="{{ URL::asset('/js/ctrl/loginCtrl.js') }}"></script>
+    <script src="{{url('')}}/js/factory/service/userService.js"></script>
+    <script src="{{ URL::asset('/js/ctrl/headerCtrl.js') }}"></script>
+    <script>
+        ngApp.value('$productInfo', {redirectProduct: '{{route("products")}}', redirectLogin: '{{route("login")}}'});
+  </script>>
   
 </body>
 

@@ -14,9 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/admin/login', 'User\LoginCtrl@getLogin')->name('login')->middleware('guest');
-// Route::post('/login', 'User\LoginCtrl@postLogin')->name('postLogin')->middleware('guest');
-// Route::get('/logout', 'User\LoginCtrl@logout')->name('logout');
-Auth::routes();
 
-// Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/login', 'User\LoginCtrl@getLogin')->name('login')->middleware('guest');
+Route::post('/login', 'User\LoginCtrl@postLogin')->name('postLogin')->middleware('guest');
+Route::get('/logout', 'User\LoginCtrl@logout')->name('logout');
+
+Route::middleware(['web', 'auth'])->group(function () {
+	Route::get("/products", "Backend\Products\ProductCtrl@products")->name('products');
+});

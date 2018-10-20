@@ -18,7 +18,7 @@
                                 <span class="pull-right dropdown-toggle">
                                     <i class="dropdown-caret"></i>
                                 </span>
-                                <p class="mnp-name"><!-- {{Auth::user()->name}} --></p>
+                                <p class="mnp-name">{{Auth::user()->name}}</p>
                                 <!-- <span class="mnp-desc">aaron.cha@themeon.net</span> -->
                             </a>
                         </div>
@@ -40,7 +40,7 @@
 
                     <ul id="mainnav-menu" class="list-group">
                         <li class="{{ request()->is('user') ? 'active-link' : '' }}">
-                            <a href="{{route('user')}}">
+                            <a href="">
                                 <!-- <i class="fa fa-user"></i> -->
                                 <i class="ti-user"></i>
                                 <span class="menu-title">
