@@ -23,6 +23,8 @@
 <script src="{{ url('') }}/js/factory/myLoader.js"></script>
 <script src="{{ url('') }}/js/factory/myImage.js"></script>
 <script src="{{ url('') }}/js/factory/myFile.js"></script>
+<script src="{{ url('') }}/js/factory/myFile.js"></script>
+<script src="{{ url('') }}/js/factory/apply.js"></script>
 
 <!--default ctrl-->
 <!-- <script src="{{ url('') }}/js/ctrl/headerCtrl.js"></script> -->

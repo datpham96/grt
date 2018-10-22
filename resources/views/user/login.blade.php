@@ -84,9 +84,9 @@
   @includeif('backend.Layouts.partial._default_js')
   @includeif('backend.Layouts.partial._js')
   @yield('myJs')
-    <script src="{{ URL::asset('/js/ctrl/loginCtrl.js') }}"></script>
-    <script src="{{url('')}}/js/factory/service/userService.js"></script>
-    <script src="{{ URL::asset('/js/ctrl/headerCtrl.js') }}"></script>
+    <script src="{{ URL::asset('/js/ctrl/backend/loginCtrl.js') }}"></script>
+    <script src="{{url('')}}/js/factory/service/backend/userService.js"></script>
+    <script src="{{ URL::asset('/js/ctrl/backend/headerCtrl.js') }}"></script>
     <script>
         ngApp.value('$productInfo', {redirectProduct: '{{route("products")}}', redirectLogin: '{{route("login")}}'});
   </script>>

@@ -38,7 +38,7 @@ class LoginCtrl extends Controller
     	$validator = Validator::make($request->all(), $rules, $messages);
 
     	if ($validator->fails()) {
-            return response()->json(["status" => StatusCodeConfig::CONST_VALIDATE_ERRORS]);
+            return response()->json(["status" => StatusCodeConfig::CONST_VALIDATE_LOGIN_ERRORS]);
     	}
         
         $email = $request->input('email');
@@ -49,7 +49,7 @@ class LoginCtrl extends Controller
                 ->buildCond()->first();
 
         if($userInfo == NULL) {
-            return response()->json(["status" => StatusCodeConfig::CONST_VALIDATE_ERRORS]);
+            return response()->json(["status" => StatusCodeConfig::CONST_VALIDATE_LOGIN_ERRORS]);
         }
 
         if (Auth::attempt(['email' => $email, 'password' => $password])) {

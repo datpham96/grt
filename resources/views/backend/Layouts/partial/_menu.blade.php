@@ -23,7 +23,7 @@
                             </a>
                         </div>
                         <div id="profile-nav" class="collapse list-group bg-trans">
-                            <a href="{{url('')}}/userInfo" class="list-group-item">
+                            <a href="{{url('')}}/admin/userInfo" class="list-group-item">
                                 <i class="demo-pli-male icon-lg icon-fw"></i>
                                 Tài khoản
                             </a>

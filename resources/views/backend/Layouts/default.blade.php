@@ -42,8 +42,7 @@
             @includeif('backend.Layouts.partial._default_js')
             @includeif('backend.Layouts.partial._js')
             @yield('myJs')
-            <script src="{{ URL::asset('/js/ctrl/headerCtrl.js') }}"></script>
-<!--            @includeif('Layouts.partial._footer')-->
+            <script src="{{ URL::asset('/js/ctrl/backend/headerCtrl.js') }}"></script>
         </div>
     </body>
 </html>
