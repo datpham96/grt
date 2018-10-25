@@ -76,7 +76,7 @@
                          </div>  
                      </ul>
                  </div> -->
-                 <support-modal modal-dom="domSupport" form-support="formSupport" single-data-support="dataSupport" ret-func="actions.saveData(data,id)"></support-modal>
+                 <support-modal modal-dom="domSupport" form-support="formSupport" single-data-support="dataSupport" dom-avatar ret-func="actions.saveData(data,id)"></support-modal>
             </div>
 
         </div>

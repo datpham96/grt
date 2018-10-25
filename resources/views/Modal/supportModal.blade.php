@@ -2,21 +2,13 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="myModalLabel">Thêm người hỗ trợ</h5>
+                <h5 class="modal-title" id="myModalLabel">@{{title}}</h5>
             </div>
             <div class="modal-body">
                 <div class=" panel-primary">
                     <!--Panel body-->
                     <div class="panel-body">
                         <form class="form-horizontal" data-parsley-validate ng-dom="formSupport" enctype="multipart/form-data">
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label" for="demo-is-inputsmall"></label>
-                                <div class="col-sm-8">
-                                    <ul ng-repeat="error in modalData.errors">
-                                        <li style="color: #dd4b39; list-style-type: none;">@{{ error}}</li>
-                                    </ul>
-                                </div>
-                            </div>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label" for="demo-is-inputsmall">Họ và tên: </label>
                                 <div class="col-sm-9">
@@ -49,13 +41,13 @@
                                                 <i class="fa fa-picture-o"></i> Chọn ảnh
                                             </a>
                                         </span>
-                                        <input disabled="" ng-model="getData.avatar" id="thumbnail" class="form-control" type="text" name="imageTitle">
+                                        <input disabled="" style="display: none;" ng-model="getData.avatar" id="thumbnail" class="form-control" type="text" name="imageTitle">
                                             
                                     </div>
                                     <p class="text-danger" style="margin-top: 5px;" ng-repeat="er in errors.avatar">
                                         @{{ er }}
                                     </p>
-                                    <img id="holder" style="margin-top:15px;max-height:150px; max-width: 140px;">
+                                    <img id="holder" ng-dom="domAvatar" style="margin-top:15px;max-height:150px; max-width: 140px;">
                                 </div>
                             </div>
                         </form>
@@ -68,6 +60,5 @@
             </div>
         </div>
     </div>
-    <chosse-ldap-modal modal-dom-ldap="chosseLdapModal"  ret-func="actions.infoLdapUser(data)" dep-id="depId"></chosse-ldap-modal>
 </div>
 <!-- End Modal User

@@ -34,6 +34,7 @@ ngApp.controller('supportCtrl', function ($scope, $myLoader, $myNotify, $support
     		$($scope.formSupport).parsley().reset();
     	},
     	modalUpdate: function(data){
+            $scope.dataSupport = {};
     		$scope.dataSupport = data;
     		$($scope.domSupport).modal('show');
     		$($scope.formSupport).parsley().reset();
@@ -47,7 +48,9 @@ ngApp.controller('supportCtrl', function ($scope, $myLoader, $myNotify, $support
     			}
                 $($scope.domSupport).modal('hide');
                 processData.getList();    			
-    		}   		
+    		}else{
+                $myNotify.err('Thao tác thất bại!');
+            }   		
     	},
         delete: function(id){
             $myBootbox.confirm('Bạn có muốn xóa không?', function (result) {
@@ -56,14 +59,14 @@ ngApp.controller('supportCtrl', function ($scope, $myLoader, $myNotify, $support
                         if(resp.data){
                             $myNotify.success('Xóa người hỗ trợ thành công!');
                         }else{
-                            $myNotify.success('Xóa người hỗ trợ thành công!');
+                            $myNotify.err('Xóa người hỗ trợ thất bại!');
                         }
                         $myLoader.hide();
                         $($scope.domSupport).modal('hide');
                         processData.getList();
                     }).catch(function(err){
                         $($scope.domSupport).modal('hide');
-                        $myNotify.success('Xóa người hỗ trợ thành công!');
+                        $myNotify.err('Xóa người hỗ trợ thất bại!');
                         $myLoader.hide();
                     });
                 }

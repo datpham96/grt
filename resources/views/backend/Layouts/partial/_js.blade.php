@@ -23,6 +23,7 @@
 
 <!--default factory-->
 <script src="{{ url('') }}/js/factory/myBootbox.js"></script>
+<script src="{{ url('') }}/js/factory/myAvatar.js"></script>
 <script src="{{ url('') }}/js/factory/myNotify.js"></script>
 <script src="{{ url('') }}/js/factory/myLoader.js"></script>
 <script src="{{ url('') }}/js/factory/myImage.js"></script>

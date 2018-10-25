@@ -6,6 +6,13 @@ ngApp.factory('$linkService', function ($http, $httpParamSerializer)
     };
 
     //data
+    service.data.list = function(freeText, page, perPage){
+       return {
+            freeText: freeText || "",
+            page: page || "",
+            perPage: perPage || ""
+       }
+    };
     service.data.update = function(name, link, avatar){
         var params = new FormData();
         params.append('name', name || "");

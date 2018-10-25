@@ -1,19 +1,18 @@
-ngApp.directive('supportModal', function ($apply, $myLoader, $supportService, $myAvatar) {
-    var templateUrl = SiteUrl + "/modal/supportModal";
+ngApp.directive('linkModal', function ($apply, $myLoader, $linkService, $myAvatar) {
+    var templateUrl = SiteUrl + "/modal/linkModal";
     var restrict = 'E';
     var scope = {
         retFunc: "&",
         modalDom: '=',
-        modalData:'=singleDataSupport',
-        formSupport:'=formSupport',
+        modalData:'=singleData',
+        formData:'=formData',
         domAvatar: '=domAvatar'
     };
 
     var link = function (scope) {       
         scope.getData = {
             name: "",
-            email: "",
-            phone: "",
+            link: "",
             avatar: ""
         };
         scope.data = {
@@ -21,16 +20,15 @@ ngApp.directive('supportModal', function ($apply, $myLoader, $supportService, $m
         };
         scope.actions = {
             update: function () {
-                if ($(scope.formSupport).parsley().validate()) {
+                if ($(scope.formData).parsley().validate()) {
                     $myLoader.show();
                     var name = scope.getData.name;
-                    var email = scope.getData.email;
-                    var phone = scope.getData.phone;
-                    var avatar = scope.getData.avatar || "/images/new-user-image-default.jpg";
+                    var email = scope.getData.link;
+                    var avatar = scope.getData.avatar || "/images/image-default.png";
                     var id = scope.modalData.id || 0;
-                    var params = $supportService.data.update(name,email,phone,avatar);
+                    var params = $linkService.data.update(name,email,avatar);
                     if(id > 0){                        
-                        $supportService.action.update(params, id).then(function(resp){
+                        $linkService.action.update(params, id).then(function(resp){
                             scope.retFunc({ data: true , id: id});
                             $myLoader.hide();
                         }).catch(function(err){
@@ -39,7 +37,7 @@ ngApp.directive('supportModal', function ($apply, $myLoader, $supportService, $m
                             $myLoader.hide();
                         });
                     }else{
-                        $supportService.action.insert(params).then(function(resp){
+                        $linkService.action.insert(params).then(function(resp){
                             scope.retFunc({ data: true });
                             $myLoader.hide();
                         }).catch(function(err){
@@ -54,15 +52,15 @@ ngApp.directive('supportModal', function ($apply, $myLoader, $supportService, $m
         };
 
         scope.$watch('modalData', function (newVal, oldVal) {
-            $(scope.domAvatar).attr('src',$myAvatar.avatarDefault());
+            $(scope.domAvatar).attr('src',$myAvatar.imageDefault());
             var id = (newVal.id) ? parseInt(newVal.id) : 0;
             $apply(function () {
                 scope.getData = {};
                 if(id > 0){
-                    scope.title = "Sửa người hỗ trợ";
+                    scope.title = "Sửa đối tác";
                     scope.getData = angular.copy(newVal)
                 }else{
-                    scope.title = "Thêm người hỗ trợ";
+                    scope.title = "Thêm đối tác";
                     scope.getData = {};
                 }
             });

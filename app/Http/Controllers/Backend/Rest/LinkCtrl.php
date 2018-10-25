@@ -35,7 +35,7 @@ class LinkCtrl extends Controller
         $perPage = $request->input('perPage', 10);
         $freeText = $request->input('freeText', '');
 
-        $resData = $this->linkModel->filterName($freeText)->buildCond()->get();
+        $resData = $this->linkModel->filterName($freeText)->buildCond()->paginate($perPage);
                        
         return response()->json($resData);
     }
@@ -44,10 +44,8 @@ class LinkCtrl extends Controller
         //validate
         $validate = Validator::make($request->all(), [
             'name' => 'required',
-            'link' => 'required',
         ], [
             'name.required' => StatusCodeConfig::CONST_VALIDATE_NAME,
-            'link.required' => StatusCodeConfig::CONST_VALIDATE_LINK
         ]);
         
         if ($validate->fails()) {
@@ -56,17 +54,13 @@ class LinkCtrl extends Controller
 
         $name = $request->input('name','');
         $link = $request->input('link','');
-
-        $avatar_name = '';
-        if ($request->hasFile('avatar')) {
-            $avatar_name = $request->avatar->store('public/links');
-        }
+        $avatar = $request->input('avatar','');
 
         //thuc hien insert
         $linkId = $this->linkModel->insertGetId([
             "name" => $name,
             "link" => $link,
-            "avatar" => $avatar_name, 
+            "avatar" => $avatar, 
             "created_at" => Date('Y-m-d H:i:s'),
             "updated_at" => Date('Y-m-d H:i:s')
         ]);
@@ -80,10 +74,8 @@ class LinkCtrl extends Controller
         //validate
         $validate = Validator::make($request->all(), [
             'name' => 'required',
-            'link' => 'required',
         ], [
             'name.required' => StatusCodeConfig::CONST_VALIDATE_NAME,
-            'link.required' => StatusCodeConfig::CONST_VALIDATE_LINK
         ]);
         
         if ($validate->fails()) {
@@ -99,17 +91,12 @@ class LinkCtrl extends Controller
 
         $name = $request->input('name','');
         $link = $request->input('link','');
-
-        $avatar_name = '';
-        if ($request->hasFile('avatar')) {
-            $avatar_name = $request->avatar->store('public/links');
-        }else{
-        	$avatar_name = $linkInfo->avatar;
-        }
+        $avatar = $request->input('avatar','');
         
         //thuc hien update
         $linkInfo->name = $name;
         $linkInfo->link = $link;
+        $linkInfo->avatar = $avatar;
         $linkInfo->updated_at = Date('Y-m-d H:i:s');
         $linkInfo->save();
 
