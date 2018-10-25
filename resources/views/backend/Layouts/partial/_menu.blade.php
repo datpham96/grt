@@ -39,12 +39,48 @@
 
 
                     <ul id="mainnav-menu" class="list-group">
-                        <li class="{{ request()->is('user') ? 'active-link' : '' }}">
-                            <a href="">
+                        <li class="{{ request()->is('admin/products') ? 'active-link' : '' }}">
+                            <a href="{{url('')}}/admin/products">
                                 <!-- <i class="fa fa-user"></i> -->
-                                <i class="ti-user"></i>
+                                <i class="ti-package"></i>
                                 <span class="menu-title">
-                                    <b>Người dùng</b>
+                                    <b>Sản phẩm</b>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="{{ request()->is('admin/categorys') ? 'active-link' : '' }}">
+                            <a href="{{url('')}}/admin/categorys">
+                                <!-- <i class="fa fa-user"></i> -->
+                                <i class="ti-folder"></i>
+                                <span class="menu-title">
+                                    <b>Chuyên mục</b>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="{{ request()->is('admin/posts') ? 'active-link' : '' }}">
+                            <a href="{{url('')}}/admin/posts">
+                                <!-- <i class="fa fa-user"></i> -->
+                                <i class="ti-marker-alt"></i>
+                                <span class="menu-title">
+                                    <b>Bài viết</b>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="{{ request()->is('admin/links') ? 'active-link' : '' }}">
+                            <a href="{{url('')}}/admin/links">
+                                <!-- <i class="fa fa-user"></i> -->
+                                <i class="ti-link"></i>
+                                <span class="menu-title">
+                                    <b>Liên kết</b>
+                                </span>
+                            </a>
+                        </li>                        
+                        <li class="{{ request()->is('admin/supports') ? 'active-link' : '' }}">
+                            <a href="{{url('')}}/admin/supports">
+                                <!-- <i class="fa fa-user"></i> -->
+                                <i class="ti-info"></i>
+                                <span class="menu-title">
+                                    <b>Liên hệ</b>
                                 </span>
                             </a>
                         </li>

@@ -1,18 +1,17 @@
 ngApp.factory('$myBootbox', ['$rootScope','$filter', function ($rootScope,$filter) {
     var myBootbox = {
         confirm: function(message, callBack){
-            var $translate = $filter('translate');
 
             callBack = callBack || function(){};
             bootbox.confirm({ 
                 message: message, 
                 buttons: {
                     'cancel': {
-                        label: $translate('Button.No'),
+                        label: "Không",
                         className: 'btn-default'
                     },
                     'confirm': {
-                        label: $translate('Button.Yes'),
+                        label: "Có",
                         className: 'btn-primary'
                     }
                 },
@@ -27,18 +26,17 @@ ngApp.factory('$myBootbox', ['$rootScope','$filter', function ($rootScope,$filte
             });
         },
         prompt: function(title, callBack){
-            var $translate = $filter('translate');
 
             callBack = callBack || function(){};
             bootbox.prompt({
                 title: title, 
                 buttons: {
                     'cancel': {
-                        label: $translate('Button.No'),
+                        label: "Không",
                         className: 'btn-default'
                     },
                     'confirm': {
-                        label: $translate('Button.Yes'),
+                        label: "Có",
                         className: 'btn-primary'
                     }
                 },

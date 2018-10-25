@@ -31,7 +31,7 @@ ngApp.controller('loginCtrl', function ($myNotify,$scope, $productInfo, $myLoade
                     $myLoader.hide();
                 }, function (err) {
                     $myLoader.hide();
-                    console.log(err);
+                    $scope.data.errorMsg = err.data.status;
                 });
             }
 

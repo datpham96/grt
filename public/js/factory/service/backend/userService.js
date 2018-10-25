@@ -29,7 +29,7 @@ ngApp.factory('$userService', function ($http, $httpParamSerializer)
     //action
 
     service.action.authUser = function() {
-        var url = SiteUrl + '/rest/user/auth/info';
+        var url = SiteUrl + '/backend/rest/user/auth/info';
         return $http.get(url);
     };
 
@@ -42,12 +42,12 @@ ngApp.factory('$userService', function ($http, $httpParamSerializer)
             }
         };
         
-        var url = SiteUrl + '/rest/userInfo';
+        var url = SiteUrl + '/backend/rest/userInfo';
         return $http.post(url, data, config);
     };
 
     service.action.changePassword = function(currentPassword, newPassword){
-        var url = SiteUrl + '/rest/userInfo/password';
+        var url = SiteUrl + '/backend/rest/userInfo/password';
         var data = {
             currentPassword: currentPassword,
             newPassword: newPassword
@@ -68,7 +68,7 @@ ngApp.factory('$userService', function ($http, $httpParamSerializer)
     };
     
     service.action.list = function (data) {
-        var url = SiteUrl + '/rest/user?' + $httpParamSerializer(data);
+        var url = SiteUrl + '/backend/rest/user?' + $httpParamSerializer(data);
         return $http.get(url);
     };
 

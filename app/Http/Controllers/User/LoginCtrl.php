@@ -17,7 +17,6 @@ class LoginCtrl extends Controller
 
     function __construct(UserModel $userModel) {
         // $this->redirectTo = route('defaultPageAfterLogin');
-        // $this->middleware('guest')->except('logout');
         $this->middleware('guest')->except('logout');
         $this->userModel = $userModel;
     }
@@ -38,7 +37,7 @@ class LoginCtrl extends Controller
     	$validator = Validator::make($request->all(), $rules, $messages);
 
     	if ($validator->fails()) {
-            return response()->json(["status" => StatusCodeConfig::CONST_VALIDATE_LOGIN_ERRORS]);
+            return response()->json(["status" => StatusCodeConfig::CONST_VALIDATE_LOGIN_ERRORS], 422);
     	}
         
         $email = $request->input('email');
@@ -47,14 +46,16 @@ class LoginCtrl extends Controller
         
         $userInfo = $this->userModel->filterEmail($email)
                 ->buildCond()->first();
-
+           
         if($userInfo == NULL) {
-            return response()->json(["status" => StatusCodeConfig::CONST_VALIDATE_LOGIN_ERRORS]);
+            return response()->json(["status" => StatusCodeConfig::CONST_VALIDATE_LOGIN_ERRORS], 422);
         }
-
-        if (Auth::attempt(['email' => $email, 'password' => $password])) {
-            return response()->json(['status' => true], 200);
-        }
+        if (app('hash')->check($password, $userInfo->password)) {
+            Auth::attempt(['email' => $email, 'password' => $password]);
+            return response()->json(["status" => true]);
+        }else{
+            return response()->json(["status" => StatusCodeConfig::CONST_VALIDATE_LOGIN_ERRORS], 422);
+        };
         
     }
 

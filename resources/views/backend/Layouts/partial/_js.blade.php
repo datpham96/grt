@@ -1,4 +1,5 @@
 <script src="{{ url('') }}/js/myJs.js"></script>
+<script src="{{ url('') }}/vendor/laravel-filemanager/js/lfm.js"></script>
 {{--  <script src="{{ url('') }}/js/plugin/bootstrap-timepicker.min.js"></script>
 <script src="{{ url('') }}/js/plugin/bootstrap-datepicker.min.js" charset="UTF-8"></script>  --}}
 <script src="{{ url('') }}/js/plugin/bootstrap-datepicker.vi.min.js" charset="UTF-8"></script>
@@ -6,7 +7,7 @@
 <!-- End JS Date Picker -->
 <script src="{{ url('') }}/js/plugin/parsley/parsley.min.js"></script>
 <script src="{{ url('') }}/js/plugin/parsley/locale/vi.js"></script>
-<script src="{{ url('') }}/js/plugin/parsley/locale/en.js"></script>
+<!-- <script src="{{ url('') }}/js/plugin/parsley/locale/en.js"></script> -->
 
 <script src="{{ url('') }}/js/plugin/bootbox.min.js"></script>
 
@@ -15,6 +16,9 @@
 <!--default directive-->
 <script src="{{ url('') }}/js/directives/ngEnter.js"></script>
 <script src="{{ url('') }}/js/directives/ngdom.js"></script>
+<script src="{{ url('') }}/js/directives/myCkeditor.js"></script>
+<script src="{{ url('') }}/js/directives/myBtnImage.js"></script>
+<script src="{{ url('') }}/js/directives/myCkeditor.js"></script>
 
 
 <!--default factory-->

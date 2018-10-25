@@ -9,7 +9,7 @@ class UserModel extends MyModel
 {
     protected $table = 'users';
     public $timestamps = false;
-    protected $hidden = ['password'];
+    protected $hidden = ['email', 'password'];
 
     //filter by email
     public function filterEmail($email){

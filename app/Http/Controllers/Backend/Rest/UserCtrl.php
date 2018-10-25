@@ -86,14 +86,13 @@ class UserCtrl extends Controller
         if ($userInfo == null) {
             return response()->json(['message' => StatusCodeConfig::CONST_STATUS_USER_NOT_EXISTS], 422);
         }
-
         if (app('hash')->check($request->currentPassword, $userInfo->password)) {
             $userInfo->password = app('hash')->make($request->newPassword);
             $userInfo->save();
             Auth::attempt(['email' => $user->email, 'password' => $request->newPassword]);
             return response()->json(['status' => true], 200);
         }
-        return response()->json(['status' => false], 200);
+        return response()->json(['status' => false], 422);
     }
 
     //validate change password current user

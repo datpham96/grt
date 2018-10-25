@@ -14,4 +14,8 @@ class ProductCtrl extends Controller
     public function productDetail() {
         return view('backend.products.productDetail');
     }
+
+    public function main() {
+        return view('backend.products.main');
+    }
 }

@@ -10,7 +10,7 @@ ngApp.controller('userInfoCtrl', function ($myNotify, $scope, $apply, $myFile, $
     $scope.actions = {
 
         update: function () {
-            $myLoader.show();
+            
             if ($($scope.formUpdateUser).parsley().validate()) {//validate
                 $myLoader.show();
                 if ($('input[name*=avatar]')[0].files[0] == undefined)

@@ -11,6 +11,7 @@ class DatabaseUserSeeder extends Seeder
      */
     public function run()
     {
+        
         DB::table('users')->insert([
             [
                 'password' => bcrypt('123456'),
@@ -20,5 +21,6 @@ class DatabaseUserSeeder extends Seeder
                 'avatar' => ''
             ],
         ]);
+        
     }
 }
