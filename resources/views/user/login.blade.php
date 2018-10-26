@@ -89,7 +89,7 @@
     <script src="{{ URL::asset('/js/ctrl/backend/headerCtrl.js') }}"></script>
     <script>
         ngApp.value('$productInfo', {redirectProduct: '{{route("products")}}', redirectLogin: '{{route("login")}}'});
-  </script>>
+  </script>
   
 </body>
 

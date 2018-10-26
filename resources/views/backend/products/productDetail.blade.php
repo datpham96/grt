@@ -3,30 +3,30 @@
     <!--Page Title-->
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <div id="page-title">
-        <h1 class="page-header text-overflow">Thêm sản phẩm</h1>
+        <h1 class="page-header text-overflow">@{{title}}</h1>
         
     </div>
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <!--End page title-->
 </div>
-<div class="col-md-12">
+<div class="col-md-12" ng-controller="productCtrl">
     <div class="panel panel-success">
         <div class="panel-body " >
-            <form ng-enter="actions.saveInsert()" data-parsley-validate id="form-insert-post">
+            <form ng-enter="actions.update()" data-parsley-validate id="form-insert-post" ng-dom="formData">
 			<div class="col-md-8">
 				<div class="panel panel-default">
 					<div class="panel-body">
 						<div class="col-md-12">	
 							<h4>Tên sản phẩm</h4>	
-							<input required  ng-model="data.params.title"  class="form-control" type="" name="" placeholder="Tiêu đề bài viết...">
-							<div ng-repeat="err in data.errors.title" style="color: red; margin-top:5px;">
+							<input required  ng-model="getData.name"  class="form-control" type="" name="" placeholder="Tên sản phẩm...">
+							<div ng-repeat="err in data.errors.name" style="color: red; margin-top:5px;">
 								@{{ err }}
 							</div>
 						</div>
 						
 						<div class="col-md-12">
 							<h4>Mô tả</h4>
-							<input required  ng-model="data.params.description"  class="form-control" type="" name="" placeholder="Mô tả bài viết...">
+							<input required  ng-model="getData.description"  class="form-control" type="" name="" placeholder="Mô tả sản phẩm...">
 							<div ng-repeat="err in data.errors.description" style="color: red; margin-top:5px;">
 								@{{ err }}
 							</div>
@@ -35,10 +35,10 @@
 						<div class="col-md-12">	
 							<h4>Nội dung</h4>
 
-							<textarea required class="my-ckeditor" ng-model="data.params.post_content">
+							<textarea required class="my-ckeditor" ng-model="getData.content">
 								
 							</textarea>
-							<div ng-repeat="err in data.errors.post_content" style="color: red; margin-top:5px;">
+							<div ng-repeat="err in data.errors.content" style="color: red; margin-top:5px;">
 								@{{ err }}
 							</div>	
 						</div>
@@ -47,7 +47,7 @@
 							<br>
 							<br>	
 
-							<button ng-click="actions.saveInsert()" class="btn btn-primary pull-right">Cập nhật</button>
+							<button ng-click="actions.update()" class="btn btn-primary pull-right">Cập nhật</button>
 							<a style=" margin-right: 5px;" class=" btn btn-default pull-right" href="{{ url('') }}/admin/products">
 								<!-- <i class="fa fa-arrow-circle-right" aria-hidden="true" style="font-size: 15px;"></i>  -->
 								Hủy
@@ -63,51 +63,29 @@
 					<div class="panel-body">
 						<div class="vietbai_images">
 							<h4>Ảnh bài viết</h4>
-							<div class="input-group">
-								<span class="input-group-btn">
-									<a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary">
-										<i class="fa fa-picture-o"></i> Chọn ảnh
-									</a>
-								</span>
-								<input style="display: none;" id="thumbnail" class="form-control" type="text" name="imageTitle">
-							</div>
-							<img id="holder" style="margin-top:15px;max-height:100px;">
-						</div>
-
-						<div ng-repeat="err in data.errors.image" style="color: red; margin-top:5px;">
-							<!-- @{{ err }} -->
+							<div class="input-group my-btn-image" >
+                                <span class="input-group-btn">
+                                    <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary">
+                                        <i class="fa fa-picture-o"></i> Chọn ảnh
+                                    </a>
+                                </span>
+                                <input disabled="" style="display: none;" ng-model="getData.avatar" id="thumbnail" class="form-control" type="text" name="imageTitle"/>
+                                    
+                            </div>
+                            
+                            <img id="holder" ng-dom="domAvatar" style="margin-top:15px;max-height:150px; max-width: 100px;">
 						</div>
 					</div>
 				</div>
 				<div class="panel panel-default">
 					<div class="panel-body">
-						<div class="vietbai_chuyenmuc">
-							<h4>Chuyên mục</h4>
-							<div class="btn-group bootstrap-select">
-								<select class="selectpicker" tabindex="-98">
-	                                <option>HTML</option>
-	                                <option>CSS</option>
-	                                <option>jQuery</option>
-	                                <option>Javascript</option>
-	                            </select>
-							</div>
-							<div class="list-cate">
-								<ul>
-									<li ng-repeat="(key, category) in data.listCategory">
-										<input id="@{{category.id}}" type="checkbox" name=""
-										ng-model="data.params.checkedCategory[category.id]"> 
-										<label for="@{{category.id}}" class="checkbox-inline">
-											@{{ category.name }}
-										</label>
-									</li>
-								</ul>
-							</div>
-							<div ng-repeat="err in data.errors.post_content" style="color: red; margin-top:5px;">
+						<h4>Chuyên mục</h4>
+							<select required class="form-control" ng-model="getData.category_id">
+                                <option ng-value="val.id" ng-repeat="(key, val) in data.listCategory">@{{val.name}}</option>
+                            </select>
+							<div ng-repeat="err in data.errors.category_id" style="color: red; margin-top:5px;">
 								@{{ err }}
 							</div>
-						</div>
-
-
 					</div>
 				</div>
 				

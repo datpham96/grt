@@ -8,7 +8,7 @@
                 <div class=" panel-primary">
                     <!--Panel body-->
                     <div class="panel-body">
-                        <form class="form-horizontal" data-parsley-validate ng-dom="formData" enctype="multipart/form-data">
+                        <form class="form-horizontal" data-parsley-validate ng-dom="formData" enctype="multipart/form-data" ng-enter="actions.update()">
                             <div class="form-group">
                                 <label class="col-sm-3 control-label" for="demo-is-inputsmall">Tên đối tác: </label>
                                 <div class="col-sm-9">

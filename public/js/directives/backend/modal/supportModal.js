@@ -54,14 +54,16 @@ ngApp.directive('supportModal', function ($apply, $myLoader, $supportService, $m
         };
 
         scope.$watch('modalData', function (newVal, oldVal) {
-            $(scope.domAvatar).attr('src',$myAvatar.avatarDefault());
+            
             var id = (newVal.id) ? parseInt(newVal.id) : 0;
             $apply(function () {
                 scope.getData = {};
                 if(id > 0){
+                    $(scope.domAvatar).attr('src',$myAvatar.image(newVal.avatar));
                     scope.title = "Sửa người hỗ trợ";
                     scope.getData = angular.copy(newVal)
                 }else{
+                    $(scope.domAvatar).attr('src',$myAvatar.avatarDefault());
                     scope.title = "Thêm người hỗ trợ";
                     scope.getData = {};
                 }

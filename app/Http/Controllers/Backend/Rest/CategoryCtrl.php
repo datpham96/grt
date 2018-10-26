@@ -20,19 +20,6 @@ class CategoryCtrl extends Controller
     }
 
     public function list(Request $request){
-        //validate
-        $validate = Validator::make($request->all(), [
-            'page' => 'required|numeric',
-            'perPage' => 'numeric',
-        ], [
-            'page.required' => StatusCodeConfig::CONST_STATUS_PAGE_NOT_EMPTY,
-            'page.numeric' => StatusCodeConfig::CONST_STATUS_PAGE_FORMAT_ERR,
-            'perPage.numeric' => StatusCodeConfig::CONST_STATUS_PAGE_FORMAT_ERR,
-        ]);
-        
-        if ($validate->fails()) {
-            return response()->json($validate->messages(), 422);
-        }
         
         //lay danh sach
         $perPage = $request->input('perPage', 10);

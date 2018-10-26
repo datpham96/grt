@@ -6,11 +6,14 @@ ngApp.factory('$categoryService', function ($http, $httpParamSerializer)
     };
 
     //data
-    service.data.update = function(name, parent_id, avatar){
+    service.data.list = function(freeText){
+        return {
+            freeText: freeText || ""
+        }
+    }
+    service.data.update = function(name){
         var params = new FormData();
         params.append('name', name || "");
-        params.append('parent_id', parentId || "");
-        params.append('avatar', avatar || "");
         
         return params;
     };

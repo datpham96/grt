@@ -10,7 +10,7 @@ class StatusCodeConfig {
     const CONST_VALIDATE_NAME = 'Họ tên không được bỏ trống';
     const CONST_VALIDATE_LINK = 'Link liên kết không được bỏ trống';
     const CONST_VALIDATE_CONTENT = 'Nội dung không được bỏ trống';
-    const CONST_VALIDATE_PARENT_ID = 'Id chuyên mục không được bỏ trống';
+    const CONST_VALIDATE_PARENT_ID = 'Chuyên mục không được bỏ trống';
     const CONST_VALIDATE_DESCRIPTION = 'Mô tả không được bỏ trống';
     const CONST_VALIDATE_EMAIL_DUPLICATE = 'Email đã tồn tại';
     const CONST_VALIDATE_PASSWORD = 'Mật khẩu không được bỏ trống';

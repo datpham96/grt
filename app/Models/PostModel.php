@@ -21,7 +21,7 @@ class PostModel extends MyModel
     //filter by name
     public function filterName($name){
         if(!empty($id)){
-            $this->setFunctionCond('where', ['name', $name]);
+            $this->setFunctionCond('where', ['name', 'LIKE','%$name%']);
         }
         
         return $this;

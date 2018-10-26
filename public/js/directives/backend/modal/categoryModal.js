@@ -1,5 +1,5 @@
-ngApp.directive('linkModal', function ($apply, $myLoader, $linkService, $myAvatar) {
-    var templateUrl = SiteUrl + "/modal/linkModal";
+ngApp.directive('categoryModal', function ($apply, $myLoader, $categoryService, $myAvatar) {
+    var templateUrl = SiteUrl + "/modal/categoryModal";
     var restrict = 'E';
     var scope = {
         retFunc: "&",
@@ -23,12 +23,10 @@ ngApp.directive('linkModal', function ($apply, $myLoader, $linkService, $myAvata
                 if ($(scope.formData).parsley().validate()) {
                     $myLoader.show();
                     var name = scope.getData.name;
-                    var email = scope.getData.link;
-                    var avatar = scope.getData.avatar || "/images/image-default.png";
                     var id = scope.modalData.id || 0;
-                    var params = $linkService.data.update(name,email,avatar);
+                    var params = $categoryService.data.update(name);
                     if(id > 0){                        
-                        $linkService.action.update(params, id).then(function(resp){
+                        $categoryService.action.update(params, id).then(function(resp){
                             scope.retFunc({ data: true , id: id});
                             $myLoader.hide();
                         }).catch(function(err){
@@ -37,13 +35,12 @@ ngApp.directive('linkModal', function ($apply, $myLoader, $linkService, $myAvata
                             $myLoader.hide();
                         });
                     }else{
-                        $linkService.action.insert(params).then(function(resp){
+                        $categoryService.action.insert(params).then(function(resp){
                             scope.retFunc({ data: true });
                             $myLoader.hide();
                         }).catch(function(err){
                             scope.retFunc({ data: false });
                             scope.errors = err.data;
-                            console.log(scope.errors);
                             $myLoader.hide();
                         });
                     }
@@ -52,17 +49,14 @@ ngApp.directive('linkModal', function ($apply, $myLoader, $linkService, $myAvata
         };
 
         scope.$watch('modalData', function (newVal, oldVal) {
-            
             var id = (newVal.id) ? parseInt(newVal.id) : 0;
             $apply(function () {
                 scope.getData = {};
                 if(id > 0){
-                    scope.title = "Sửa đối tác";
-                    scope.getData = angular.copy(newVal);
-                    $(scope.domAvatar).attr('src',$myAvatar.image(newVal.avatar));
+                    scope.title = "Sửa chuyên mục";
+                    scope.getData = angular.copy(newVal)
                 }else{
-                    $(scope.domAvatar).attr('src',$myAvatar.imageDefault());
-                    scope.title = "Thêm đối tác";
+                    scope.title = "Thêm chuyên mục";
                     scope.getData = {};
                 }
             });

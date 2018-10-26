@@ -15,7 +15,7 @@
                 <div class="col-md-12">
                     <div style="margin-top: 6px">
                         <label class="cat-email">Tìm kiếm theo tên sản phẩm</label>
-                        <input placeholder="Tìm kiếm theo tên, sản phẩm" type="text" class="form-control" ng-enter="actions.filter()"  ng-model="filter.freeText">
+                        <input placeholder="Tìm kiếm theo tên sản phẩm" type="text" class="form-control" ng-enter="actions.filter()"  ng-model="filter.freeText">
                     </div>
                 </div>
             </div>
@@ -29,6 +29,7 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
+                            <th>STT</th>
                             <th>Tên sản phẩm</th>
                             <th>Mô tả sản phẩm</th>
                             <th>Ảnh</th>
@@ -37,21 +38,22 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Sản phẩm 1</td>
-                            <td>Đây là bugi</td>
+                        <tr ng-repeat="(key, val) in data.list">
+                            <td>@{{ actions.isSTT(key + 1) }}</td>
+                            <td>@{{ val.name }}</td>
+                            <td>@{{ val.description }}</td>
                             <td>
-                                <img style="width: 150px" src="{{url('')}}/images/new-user-image-default.jpg" alt="Ảnh sản phẩm">
+                                <img style="width: 80px" ng-src="{{url('')}}/@{{ val.avatar }}" alt="@{{ val.name }}">
                             </td>
-                            <td>Phụ tùng xe máy</td>
+                            <td>@{{ val.categorys.name }}</td>
                             <td>
-                                <a href="#/update/1"><i ng-click="actions.showModal(contact)" class="fa fa-pencil-square-o btn btn-info btn-icon btn-circle" aria-hidden="true"></i></a>
+                                <a href="#/update/@{{ val.id }}"><i ng-click="actions.showModal(contact)" class="fa fa-pencil-square-o btn btn-info btn-icon btn-circle" aria-hidden="true"></i></a>
 								<i ng-click="actions.deleteContact(contact.id)" class="btn btn-danger btn-icon btn-circle  fa fa-times" aria-hidden="true"></i>
                             </td>
                         </tr>
                     </tbody>
                 </table>
-                <!-- <div class="row text-center">
+                <div class="row text-center">
                      <ul class="pagination" >
                          <div paging
                               page="paging.current_page" 
@@ -61,9 +63,8 @@
                               >
                          </div>  
                      </ul>
-                 </div> -->
+                 </div>
             </div>
         </div>
-       <!--  <contact-modal dom-contact="domContact" form-contact="formContact" single-contact ="singleContact" ret-func="actions.saveContact(data,id,error)"></contact-modal> -->
     </div>    
 </div>

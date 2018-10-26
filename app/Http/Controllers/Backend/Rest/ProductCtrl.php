@@ -35,7 +35,7 @@ class ProductCtrl extends Controller
         $perPage = $request->input('perPage', 10);
         $freeText = $request->input('freeText', '');
 
-        $resData = $this->productModel->filterName($freeText)->buildCond()->with('categorys')->get();
+        $resData = $this->productModel->filterName($freeText)->buildCond()->with('categorys')->paginate($perPage);
                        
         return response()->json($resData);
     }
@@ -60,11 +60,12 @@ class ProductCtrl extends Controller
         $description = $request->input('description','');
         $content = $request->input('content','');
         $cateId = $request->input('category_id','');
+        $avatar = $request->input('avatar','');
 
-        $avatar_name = '';
-        if ($request->hasFile('avatar')) {
-            $avatar_name = $request->avatar->store('public/products');
-        }
+        // $avatar_name = '';
+        // if ($request->hasFile('avatar')) {
+        //     $avatar_name = $request->avatar->store('public/products');
+        // }
 
         //thuc hien insert
         $productId = $this->productModel->insertGetId([
@@ -72,7 +73,7 @@ class ProductCtrl extends Controller
             "description" => $description,
             "content" => $content,
             "category_id" => $cateId,
-            "avatar" => $avatar_name, 
+            "avatar" => $avatar, 
             "created_at" => Date('Y-m-d H:i:s'),
             "updated_at" => Date('Y-m-d H:i:s')
         ]);
@@ -109,20 +110,21 @@ class ProductCtrl extends Controller
         $description = $request->input('description','');
         $content = $request->input('content','');
         $cateId = $request->input('category_id','');
+        $avatar = $request->input('avatar','');
 
-        $avatar_name = '';
-        if ($request->hasFile('avatar')) {
-            $avatar_name = $request->avatar->store('public/products');
-        }else{
-        	$avatar_name = $productInfo->avatar;
-        }
+        // $avatar_name = '';
+        // if ($request->hasFile('avatar')) {
+        //     $avatar_name = $request->avatar->store('public/products');
+        // }else{
+        // 	$avatar_name = $productInfo->avatar;
+        // }
         
         //thuc hien update
         $productInfo->name = $name;
         $productInfo->description = $description;
         $productInfo->content = $content;
         $productInfo->category_id = $cateId;
-        $productInfo->avatar = $avatar_name;
+        $productInfo->avatar = $avatar;
         $productInfo->updated_at = Date('Y-m-d H:i:s');
         $productInfo->save();
 

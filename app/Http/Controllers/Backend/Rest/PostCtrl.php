@@ -35,7 +35,7 @@ class PostCtrl extends Controller
         $perPage = $request->input('perPage', 10);
         $freeText = $request->input('freeText', '');
 
-        $resData = $this->postModel->filterName($freeText)->buildCond()->get();
+        $resData = $this->postModel->filterName($freeText)->buildCond()->paginate($perPage);
                        
         return response()->json($resData);
     }
@@ -59,18 +59,19 @@ class PostCtrl extends Controller
         $title = $request->input('title','');
         $description = $request->input('description','');
         $content = $request->input('content','');
+        $avatar = $request->input('avatar','');
 
-        $avatar_name = '';
-        if ($request->hasFile('avatar')) {
-            $avatar_name = $request->avatar->store('public/posts');
-        }
+        // $avatar_name = '';
+        // if ($request->hasFile('avatar')) {
+        //     $avatar_name = $request->avatar->store('public/posts');
+        // }
 
         //thuc hien insert
         $postId = $this->postModel->insertGetId([
             "title" => $title,
             "description" => $description,
             "content" => $content,
-            "avatar" => $avatar_name, 
+            "avatar" => $avatar, 
             "created_at" => Date('Y-m-d H:i:s'),
             "updated_at" => Date('Y-m-d H:i:s')
         ]);
@@ -106,19 +107,20 @@ class PostCtrl extends Controller
         $title = $request->input('title','');
         $description = $request->input('description','');
         $content = $request->input('content','');
+        $avatar = $request->input('avatar','');
 
-        $avatar_name = '';
-        if ($request->hasFile('avatar')) {
-            $avatar_name = $request->avatar->store('public/posts');
-        }else{
-        	$avatar_name = $postInfo->avatar;
-        }
+        // $avatar_name = '';
+        // if ($request->hasFile('avatar')) {
+        //     $avatar_name = $request->avatar->store('public/posts');
+        // }else{
+        // 	$avatar_name = $postInfo->avatar;
+        // }
         
         //thuc hien update
         $postInfo->title = $title;
         $postInfo->description = $description;
         $postInfo->content = $content;
-        $postInfo->avatar = $avatar_name;
+        $postInfo->avatar = $avatar;
         $postInfo->updated_at = Date('Y-m-d H:i:s');
         $postInfo->save();
 
