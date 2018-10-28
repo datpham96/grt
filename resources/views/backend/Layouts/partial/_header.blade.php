@@ -11,7 +11,7 @@
                 </div>
                 
                 <div class="brand-title">
-                    <span class="brand-text" style="font-size:16px">GRT</span>
+                    <span class="brand-text" style="font-size:16px">{{config('info.brandName')}}</span>
                 </div>
             </a>
         </div>

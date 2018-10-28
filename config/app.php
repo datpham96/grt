@@ -178,6 +178,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         UniSharp\LaravelFilemanager\LaravelFilemanagerServiceProvider::class,
+        App\Providers\MyAppConfigProvider::class,
 
     ],
 

@@ -6,9 +6,16 @@ ngApp.factory('$postService', function ($http, $httpParamSerializer)
     };
 
     //data
-    service.data.update = function(title, description, content, avatar){
+    service.data.list = function(freeText, page, perPage){
+        return {
+            freeText: freeText || "",
+            page: page || "",
+            perPage: perPage || "",
+        }
+    }
+    service.data.update = function(name, description, content, avatar){
         var params = new FormData();
-        params.append('title', title || "");
+        params.append('name', name || "");
         params.append('description', description || "");
         params.append('content', content || "");
         params.append('avatar', avatar || "");

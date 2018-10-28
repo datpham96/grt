@@ -1,5 +1,5 @@
 
-	<div id="page-head">
+    <div id="page-head">
     <!--Page Title-->
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <div id="page-title">
@@ -15,13 +15,13 @@
                 <div class="col-md-12">
                     <div style="margin-top: 6px">
                         <label class="cat-email">Tìm kiếm theo tên bài viết</label>
-                        <input placeholder="Tìm kiếm theo tên, sản phẩm" type="text" class="form-control" ng-enter="actions.filter()"  ng-model="filter.freeText">
+                        <input placeholder="Tìm kiếm theo tên bài viết" type="text" class="form-control" ng-enter="actions.filter()"  ng-model="filter.freeText">
                     </div>
                 </div>
             </div>
             <div class="row cat-margin" >
                 <div class="col-md-12 form-group" align="right" text-align="right">
-                    <a href="#/insert" ng-click="actions.showModal()" class="btn btn-primary btn-md" style="margin-bottom: 5px;"><i class="fa fa-plus fa-lg cat-fa-del" aria-hidden="true" ></i>Thêm bài viết
+                    <a href="#/insert" class="btn btn-primary btn-md" style="margin-bottom: 5px;"><i class="fa fa-plus fa-lg cat-fa-del" aria-hidden="true" ></i>Thêm bài viết
                     </a>
                 </div>
             </div>
@@ -29,27 +29,29 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th>Tên bài viết</th>
-                            <th>Mô tả bài viết</th>
+                            <th>STT</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Mô tả sản phẩm</th>
                             <th>Ảnh</th>
                             <th>Hành động</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Sản phẩm 1</td>
-                            <td>Đây là bugi</td>
+                        <tr ng-repeat="(key, val) in data.list">
+                            <td>@{{ actions.isSTT(key + 1) }}</td>
+                            <td>@{{ val.name }}</td>
+                            <td>@{{ val.description }}</td>
                             <td>
-                                <img style="width: 150px" src="{{url('')}}/images/new-user-image-default.jpg" alt="Ảnh sản phẩm">
+                                <img style="width: 80px" ng-src="{{url('')}}/@{{ val.avatar }}" alt="@{{ val.name }}">
                             </td>
                             <td>
-                                <a href="#/update/1"><i ng-click="actions.showModal(contact)" class="fa fa-pencil-square-o btn btn-info btn-icon btn-circle" aria-hidden="true"></i></a>
-								<i ng-click="actions.deleteContact(contact.id)" class="btn btn-danger btn-icon btn-circle  fa fa-times" aria-hidden="true"></i>
+                                <a href="#/update/@{{ val.id }}"><i ng-click="actions.showModal(contact)" class="fa fa-pencil-square-o btn btn-info btn-icon btn-circle" aria-hidden="true"></i></a>
+                                <i ng-click="actions.delete(val.id)" class="btn btn-danger btn-icon btn-circle  fa fa-times" aria-hidden="true"></i>
                             </td>
                         </tr>
                     </tbody>
                 </table>
-                <!-- <div class="row text-center">
+                <div class="row text-center">
                      <ul class="pagination" >
                          <div paging
                               page="paging.current_page" 
@@ -59,9 +61,8 @@
                               >
                          </div>  
                      </ul>
-                 </div> -->
+                 </div>
             </div>
         </div>
-       <!--  <contact-modal dom-contact="domContact" form-contact="formContact" single-contact ="singleContact" ret-func="actions.saveContact(data,id,error)"></contact-modal> -->
     </div>    
 </div>

@@ -11,8 +11,6 @@ ngApp.controller('productCtrl', function (
         listCategory: {},
         errors: {}
     }
-    
-    $scope.dataSingle = {};
     $scope.getData = {
         name: "",
         description: "",
@@ -41,7 +39,6 @@ ngApp.controller('productCtrl', function (
             $productService.action.info(id).then(function(resp){
                 $apply(function(){
                     $scope.getData = resp.data;
-                    console.log($scope.getData.avatar);
                     $("#holder").attr('src',$myAvatar.image($scope.getData.avatar));
                 }, 400);                
             }).catch(function(err){
@@ -117,18 +114,18 @@ ngApp.controller('productCtrl', function (
         delete: function(id){
             $myBootbox.confirm('Bạn có muốn xóa không?', function (result) {
                 if (result) {
-                    $linkService.action.delete(id).then(function(resp){
+                    $productService.action.delete(id).then(function(resp){
                         if(resp.status){
-                            $myNotify.success('Xóa đối tác thành công!');
+                            $myNotify.success('Xóa sản phẩm thành công!');
                         }else{
-                            $myNotify.err('Xóa đối tác thất bại!');
+                            $myNotify.err('Xóa sản phẩm thất bại!');
                         }
                         $myLoader.hide();
                         $($scope.domData).modal('hide');
                         processData.getList();
                     }).catch(function(err){
                         $($scope.domData).modal('hide');
-                        $myNotify.err('Xóa đối tác thành công!');
+                        $myNotify.err('Xóa sản phẩm thất bại!');
                         $myLoader.hide();
                     });
                 }

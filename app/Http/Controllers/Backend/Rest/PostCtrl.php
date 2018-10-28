@@ -43,7 +43,7 @@ class PostCtrl extends Controller
     public function insert(Request $request){
         //validate
         $validate = Validator::make($request->all(), [
-            'title' => 'required',
+            'name' => 'required',
             'content' => 'required',
             'description' => 'required'
         ], [
@@ -56,7 +56,7 @@ class PostCtrl extends Controller
             return response()->json($validate->messages(), 422);
         }
 
-        $title = $request->input('title','');
+        $name = $request->input('name','');
         $description = $request->input('description','');
         $content = $request->input('content','');
         $avatar = $request->input('avatar','');
@@ -68,7 +68,7 @@ class PostCtrl extends Controller
 
         //thuc hien insert
         $postId = $this->postModel->insertGetId([
-            "title" => $title,
+            "name" => $name,
             "description" => $description,
             "content" => $content,
             "avatar" => $avatar, 
@@ -84,7 +84,7 @@ class PostCtrl extends Controller
     public function update(Request $request, $id){
         //validate
         $validate = Validator::make($request->all(), [
-            'title' => 'required',
+            'name' => 'required',
             'content' => 'required',
             'description' => 'required'
         ], [
@@ -104,7 +104,7 @@ class PostCtrl extends Controller
             return response()->json(['status' => StatusCodeConfig::CONST_VALIDATE_ERRORS], 422);
         }
 
-        $title = $request->input('title','');
+        $name = $request->input('name','');
         $description = $request->input('description','');
         $content = $request->input('content','');
         $avatar = $request->input('avatar','');
@@ -117,7 +117,7 @@ class PostCtrl extends Controller
         // }
         
         //thuc hien update
-        $postInfo->title = $title;
+        $postInfo->name = $name;
         $postInfo->description = $description;
         $postInfo->content = $content;
         $postInfo->avatar = $avatar;

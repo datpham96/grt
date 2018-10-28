@@ -5,8 +5,7 @@
         <link rel="icon" href="{{url('/')}}/images/grt-logo.png" sizes="16x16">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        
-        @includeif('backend.Layouts.partial._default_css')
+
         @includeif ('backend.Layouts.partial._angular')
         @includeif('backend.Layouts.partial._css')
         @yield('myCss')
@@ -39,7 +38,6 @@
                 </div>
             </div>
             @includeif('backend.Layouts.partial._modalLoader')
-            @includeif('backend.Layouts.partial._default_js')
             @includeif('backend.Layouts.partial._js')
             @yield('myJs')
             <script src="{{ URL::asset('/js/ctrl/backend/headerCtrl.js') }}"></script>

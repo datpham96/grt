@@ -18,12 +18,18 @@ class CategoryModel extends MyModel
         return $this;
     }
 
-     //filter by name
+    //filter by name
     public function filterName($name){
         if(!empty($name)){
             $this->setFunctionCond('where', ['name','LIKE', "%$name%"]);
         }
         
         return $this;
+    }
+
+    //relationship
+    public function products()
+    {
+        return $this->hasMany('App\Models\ProductModel','category_id','id');
     }
 }

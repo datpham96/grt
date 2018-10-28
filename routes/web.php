@@ -40,7 +40,7 @@ Route::group(['prefix' => '/admin', 'middleware'=> ['web', 'auth']], function ()
 	Route::get("/supports", "Backend\Supports\SupportsCtrl@supports")->name('supports');
 });
 
-//Rest
+//Rest backend
 Route::group(['prefix' => 'backend/rest', 'middleware'=> 'auth'], function () {
 	//user
 	Route::get('/user/auth/info', 'Backend\Rest\UserCtrl@authUser');
@@ -80,8 +80,31 @@ Route::group(['prefix' => 'backend/rest', 'middleware'=> 'auth'], function () {
 	Route::delete('/product/{id}', 'Backend\Rest\ProductCtrl@delete');
 });
 
-//customer
-Route::get("/", "Frontend\Home\HomeCtrl@home")->name('home');
+//Rest frontend
+Route::group(['prefix' => 'frontend/rest', 'middleware'=> 'auth'], function () {
+	Route::get("/sendMail", "Frontend\Rest\ContactCtrl@sendMail")->name('sendMail');
+});
+
+//Home
+Route::get("/", "Frontend\Home\HomeCtrl@getHome")->name('home');
+
+//Category
+Route::get("/category/{id}", "Frontend\Category\CategoryCtrl@getCategoryDetail")->name('getCategoryDetail');
+
+//Product
+Route::get("/product", "Frontend\Product\ProductCtrl@getProduct")->name('product');
+Route::get("/product/{id}", "Frontend\Product\ProductCtrl@getProductDetail")->name('getProductDetail');
+Route::get("/product/{cateId}/{id}", "Frontend\Product\ProductCtrl@getCateProductDetail")->name('getCateProductDetail');
+
+//Post
+Route::get("/post", "Frontend\Post\PostCtrl@getPost")->name('postF');
+Route::get("/post/{id}", "Frontend\Post\PostCtrl@getPostDetail")->name('postDetailF');
+
+//Contact
+Route::get("/contact", "Frontend\Contact\ContactCtrl@getContact")->name('contactF');
+
+//Introduce
+Route::get("/introduce", "Frontend\Introduce\IntroduceCtrl@getIntroduce")->name('introduceF');
 
 //Modal
 Route::get('modal/{modalName}', 'ModalCtrl@index')->name('viewModal');
@@ -89,3 +112,5 @@ Route::get('modal/{modalName}', 'ModalCtrl@index')->name('viewModal');
 //file
 Route::get('/file/avatar', 'File\FileCtrl@avatar');
 
+//email
+Route::get('/sendMail', 'Frontend\Rest\ContactCtrl@sendMail')->name('sendMail');

@@ -21,7 +21,7 @@
             </div>
             <div class="row cat-margin" >
                 <div class="col-md-12 form-group" align="right" text-align="right">
-                    <a href="#/insert" ng-click="actions.showModal()" class="btn btn-primary btn-md" style="margin-bottom: 5px;"><i class="fa fa-plus fa-lg cat-fa-del" aria-hidden="true" ></i>Thêm sản phẩm
+                    <a href="#/insert" class="btn btn-primary btn-md" style="margin-bottom: 5px;"><i class="fa fa-plus fa-lg cat-fa-del" aria-hidden="true" ></i>Thêm sản phẩm
                     </a>
                 </div>
             </div>
@@ -48,7 +48,7 @@
                             <td>@{{ val.categorys.name }}</td>
                             <td>
                                 <a href="#/update/@{{ val.id }}"><i ng-click="actions.showModal(contact)" class="fa fa-pencil-square-o btn btn-info btn-icon btn-circle" aria-hidden="true"></i></a>
-								<i ng-click="actions.deleteContact(contact.id)" class="btn btn-danger btn-icon btn-circle  fa fa-times" aria-hidden="true"></i>
+								<i ng-click="actions.delete(val.id)" class="btn btn-danger btn-icon btn-circle  fa fa-times" aria-hidden="true"></i>
                             </td>
                         </tr>
                     </tbody>
