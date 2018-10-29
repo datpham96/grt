@@ -17,7 +17,7 @@ class SearchCtrl extends Controller
     public function getSearch(Request $request){
     	$search = $request->input('search','');
 
-    	$getSearch = $this->productModel->filterName('3')->orderBy('created_at', 'desc')->with('categorys')->paginate(6);
+    	$getSearch = $this->productModel->filterName($search)->buildCond()->orderBy('created_at', 'desc')->with('categorys')->paginate(6);
 
     	return view('frontend.search.search', compact('getSearch','search'));
     }

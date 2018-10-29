@@ -2,8 +2,7 @@
 @section('title' , 'Tìm kiếm')
 
 @section('content')
-{{ $search }}
-<h2 class="title-special" style="text-align: left;"><span>Trang chủ > Tìm kiếm với từ khóa : "Sản phẩm 1"</span></h2>
+<h2 class="title-special" style="text-align: left;"><span><a style="color: #333; font-weight: 700" class="hover-under" href="{{ url('') }}">Trang chủ</a> > Tìm kiếm với từ khóa : "{{ $search }}"</span></h2>
 <div class="col-sm-9 product">
 	<div class="list-product">
 		@foreach($getSearch as $val)
@@ -27,15 +26,7 @@
 
 	<!-- Pagination -->
 	<div class="row pull-right">
-		<ul class="pagination">
-			<li><a href="#">&laquo;</a></li>
-			<li><a href="#">1</a></li>
-			<li><a href="#">2</a></li>
-			<li><a href="#">3</a></li>
-			<li><a href="#">4</a></li>
-			<li><a href="#">5</a></li>
-			<li><a href="#">&raquo;</a></li>
-		</ul>
+		{{ $getSearch->links() }}
 	</div>		
 
 </div>
