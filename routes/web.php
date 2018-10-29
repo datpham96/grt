@@ -106,6 +106,9 @@ Route::get("/contact", "Frontend\Contact\ContactCtrl@getContact")->name('contact
 //Introduce
 Route::get("/introduce", "Frontend\Introduce\IntroduceCtrl@getIntroduce")->name('introduceF');
 
+//Search
+Route::get("/search", "Frontend\Search\SearchCtrl@getSearch")->name('getSearchF');
+
 //Modal
 Route::get('modal/{modalName}', 'ModalCtrl@index')->name('viewModal');
 

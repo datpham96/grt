@@ -25,11 +25,9 @@
 				</nav>
 			</div>
 			<div class="col-sm-5 col-xs-5 box-search" >
-				<form action="#" method="get" class="form-search" style="width: 270px;border-radius: 25px;">
-					<input type="text" name="_nkw"class="input-text" onblur="if(this.value==''){this.value='Search'};" 
-					onfocus="if(this.value=='Search'){this.value=''};" 
-					value="Search"/>
-					<button title="Search" name="submit" type="submit" class="sub_search">Search</button>
+				<form action="{{ route('getSearchF') }}" method="get" class="form-search" style="width: 270px;border-radius: 25px;">
+					<input type="text" name="search" class="input-text" />
+					<button title="Tìm kiếm" type="submit" class="sub_search">Tìm kiếm</button>
 				</form>
 			</div>
 		</div>

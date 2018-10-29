@@ -21,8 +21,8 @@
                     </div>
                     <div class="col-sm-9">
                         <ul>
-                            <li class="text-left"><i class="fa fa-user"></i> {{$val['name']}}</li>
-                            <li class="text-left"><i class="fa fa-phone"></i> {{$val['phone']}}</li>
+                            <li class="text-left"><i class="fa fa-user" style="color: #79CDFE"></i> {{$val['name']}}</li>
+                            <li class="text-left"><i class="fa fa-phone" style="color: blue"></i> {{$val['phone']}}</li>
                             @php
                                 $email = $val['email'];
                                 if(strlen($email) > 15){
@@ -35,7 +35,7 @@
                                 }
                                 
                             @endphp
-                            <li class="text-left"><i class="fa fa-envelope"></i> {{$email1}} <br>{{$email2}}</li>
+                            <li class="text-left"><i class="fa fa-envelope" style="color: orangered"></i> {{$email1}} <br>{{$email2}}</li>
                         </ul>                                           
                     </div>
                 </div>

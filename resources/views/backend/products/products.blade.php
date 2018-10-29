@@ -34,7 +34,7 @@
                             <th>Mô tả sản phẩm</th>
                             <th>Ảnh</th>
                             <th>Danh mục</th>
-                            <th>Hành động</th>
+                            <th style="width: 105px;">Hành động</th>
                         </tr>
                     </thead>
                     <tbody>

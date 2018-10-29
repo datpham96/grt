@@ -346,3 +346,10 @@ footer .col-sm-3 p{margin-top:20px;}
 .left-sidebar .active-item{
 	background-color: #dcdcdc;
 }
+footer .footer-top .active-footer{
+	color: #fe980f;
+}
+
+.hover-under:hover{
+	color: orange !important;
+}

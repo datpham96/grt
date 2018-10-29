@@ -13,13 +13,13 @@
 		<div class="col-md-4">
 			<div class="box-product">
 				<div class="image">
-					<a href="{{ url('') }}/product/{{ $val->id }}" title=""><img src="{{ url('') }}/{{ $val['avatar'] }}" title="{{ $val['name'] }}" alt="{{ $val['name'] }}" /></a>
+					<a href="{{ url('') }}/product/{{ $val->category_id }}/{{ $val->id }}" title=""><img src="{{ url('') }}/{{ $val['avatar'] }}" title="{{ $val['name'] }}" alt="{{ $val['name'] }}" /></a>
 				</div>
 				<div class="name-pro">
-					<a href="{{ url('') }}/product/{{ $val->id }}" title="">{{ $val->name }}</a>
+					<a href="{{ url('') }}/product/{{ $val->category_id }}/{{ $val->id }}" title="">{{ $val->name }}</a>
 				</div>
 				<div class="add-cart">
-					<a href="{{ url('') }}/product/{{ $val->id }}" title=""><i class="fa fa-angle-double-right"></i>Xem chi tiết</a>
+					<a href="{{ url('') }}/product/{{ $val->category_id }}/{{ $val->id }}" title=""><i class="fa fa-angle-double-right"></i>Xem chi tiết</a>
 				</div>
 			</div>
 			<!-- END box-product -->	

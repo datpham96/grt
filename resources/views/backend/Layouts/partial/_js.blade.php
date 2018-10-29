@@ -1,8 +1,5 @@
 <script src="{{ url('') }}/js/myJs.js"></script>
 <script src="{{ url('') }}/vendor/laravel-filemanager/js/lfm.js"></script>
-{{--  <script src="{{ url('') }}/js/plugin/bootstrap-timepicker.min.js"></script>
-<script src="{{ url('') }}/js/plugin/bootstrap-datepicker.min.js" charset="UTF-8"></script>  --}}
-<script src="{{ url('') }}/js/plugin/bootstrap-datepicker.vi.min.js" charset="UTF-8"></script>
 
 <!-- End JS Date Picker -->
 <script src="{{ url('') }}/js/plugin/parsley/parsley.min.js"></script>

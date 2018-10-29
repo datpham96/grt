@@ -10,10 +10,10 @@
 						<!-- Carousel items -->
 						<div class="carousel-inner">
 							<div class="active item">
-								<a href="#" title=""><img class="lazy-image" data-original="{{url('')}}/images/frontend/slide1.jpg" alt="" /></a> 
+								<a href="" title=""><img class="lazy-image" data-original="{{url('')}}/images/frontend/slide1.jpg" alt="" /></a> 
 							</div>
 							<div class="item">
-								<a href="#" title=""><img class="lazy-image" data-original="{{url('')}}/images/frontend/slide2.jpg" alt="" /></a>
+								<a href="" title=""><img class="lazy-image" data-original="{{url('')}}/images/frontend/slide2.jpg" alt="" /></a>
 							</div>
 						</div>
 						<!-- Carousel nav -->

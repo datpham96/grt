@@ -4,10 +4,26 @@
 			<div class="col-sm-2">
 				<h3>Trang chủ</h3>
 				<ul>
-					<li><a href="#" title="">Giới thiệu</a></li>
-					<li><a href="#" title="">Sản phẩm</a></li>
-					<li><a href="#" title="">Tin tức</a></li>
-					<li><a href="#" title="">Liên hệ</a></li>
+					<li><a class="{{ request()->is('introduce') ? 'active-footer' : '' }}" href="{{ route('introduceF') }}" title="">Giới thiệu</a></li>
+					@if(app('Home')->getCategory())
+						@php
+							$n = 0;
+							foreach (app('Home')->getCategory() as $val){
+								if ($n == 1) {
+										break;
+									}
+								$n++;
+								
+								
+						@endphp
+						<li><a class="{{ (request('id') == $val['id']) ? 'active-footer' : '' }}" href="{{ url('') }}/category/{{ $val['id'] }}" title="">Sản phẩm</a></li>
+						@php
+							
+						}
+						@endphp
+					@endif
+					<li><a class="{{ request()->is('post') ? 'active-footer' : '' }}" href="{{ route('postF') }}" title="">Tin tức</a></li>
+					<li><a class="{{ request()->is('contact') ? 'active-footer' : '' }}" href="{{ route('contactF') }}" title="">Liên hệ</a></li>
 				</ul>
 			</div>
 			<div class="col-md-4">

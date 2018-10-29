@@ -22,7 +22,7 @@ class ProductCtrl extends Controller
 
     public function getCateProductDetail(Request $request, $idCategory, $id){
     	$getCateProductDetail = $this->productModel->filterCateId($idCategory)
-    										   ->filterId($id)->buildCond()->first();
+    										   ->filterId($id)->buildCond()->with('categorys')->first();
 
     	return view('frontend.product.productDetail', compact('getCateProductDetail'));
     }

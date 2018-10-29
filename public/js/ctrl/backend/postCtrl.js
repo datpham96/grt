@@ -18,7 +18,7 @@ ngApp.controller('postCtrl', function (
     };
     $scope.filter = {
         page: 1,
-        perPage: 2,
+        perPage: 10,
         freeText:''
     }
     var id = $routeParams.id || 0; 

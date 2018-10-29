@@ -14,10 +14,11 @@ class SearchCtrl extends Controller
     	$this->productModel = $productModel;
     }
 
-    public function getHome(Request $request){
+    public function getSearch(Request $request){
     	$search = $request->input('search','');
-    	$getProduct = $this->productModel->filterName($search)->orderBy('created_at', 'desc')->paginate(6);
 
-    	return view('frontend.search.search', compact('getProduct'));
+    	$getSearch = $this->productModel->filterName('3')->orderBy('created_at', 'desc')->with('categorys')->paginate(6);
+
+    	return view('frontend.search.search', compact('getSearch','search'));
     }
 }
