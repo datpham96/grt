@@ -2,7 +2,7 @@
 <div class="left-sidebar">
     <div class="left-category">
         <div class="list-group" style="text-align: center";>
-            <a href="#" class="list-group-item list-group-item-success active" style="background-color:#17c425;border-color:#17c425">DANH MỤC SẢN PHẨM</a>
+            <a href="#" class="list-group-item list-group-item-success active" style="background-color:#25a003;border-color:#25a003">DANH MỤC SẢN PHẨM</a>
             @foreach(app('Home')->getCategory() as $val)
             <a href="{{ url('') }}/category/{{ $val['id'] }}" class="list-group-item list-group-item-action {{ (request('id') == $val['id']) ? 'active-item' : '' }}">{{ $val['name'] }}</a>
             @endforeach
@@ -12,7 +12,7 @@
     <!-- END left-category -->
     <div class="left-service">
         <div class="list-group" style="text-align: center";>
-            <a href="#" class="list-group-item list-group-item-success active" style="background-color:#17c425;border-color:#17c425">HỖ TRỢ TRỰC TUYẾN</a>
+            <a href="#" class="list-group-item list-group-item-success active" style="background-color:#25a003;border-color:#25a003">HỖ TRỢ TRỰC TUYẾN</a>
             @foreach(app('Home')->getSupport() as $val)
             <div href="#" class="list-group-item list-group-item-action">
                 <div class="row">
@@ -46,11 +46,14 @@
     <!-- END left-service -->
     <div class="left-actor">
         <div class="list-group" style="text-align: center";>
-            <a href="#" class="list-group-item active" style="background-color:#17c425;border-color:#17c425">ĐƠN VỊ LIÊN KẾT</a>
+            <a href="#" class="list-group-item active" style="background-color:#25a003;border-color:#25a003">ĐƠN VỊ LIÊN KẾT</a>
             <a href="#" class="list-group-item list-group-item-action">
                 <div class="owl-carousel owl-theme">
                     @foreach(app('Home')->getLink() as $val)
-                    <div class="item-partner"><img src="{{url('')}}/{{$val['avatar']}}" alt=""></div>
+                    <a href="{{ $val->link }}"">
+                    <div class="item-partner"><img src="{{url('')}}/{{$val['avatar']}}"alt="">
+                    </div>
+                    </a>
                     @endforeach
                 </div>
             </a>
