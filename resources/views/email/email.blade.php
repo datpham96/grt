@@ -101,7 +101,7 @@
 		<tr  style="height: 70px; background-color: #DDDDDD; border-top: 2px solid #AAAAAA;">
 						<td style="float: left;  mso-line-height: exactly; line-height: 150%; line-height: 30px" >
 							<div class="f-copy" style=" margin-left: 30px; padding-top: 20px;  font-size: 18px;">
-								&copy; TeamWork - DC, 2018
+								Copyright © CMS_TEAM, 2018
 							</div>
 						</td>
 						

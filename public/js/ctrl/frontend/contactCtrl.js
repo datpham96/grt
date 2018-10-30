@@ -10,6 +10,8 @@ ngApp.controller('contactCtrl', function ($myNotify,$scope, $myLoader, $myBootbo
     };
     $scope.actions = {
         sendMail: function (){   
+            $myLoader.show();
+            $scope.errors = {};
             var name = $scope.data.name;
             var email = $scope.data.email;
             var title = $scope.data.title;
@@ -21,13 +23,16 @@ ngApp.controller('contactCtrl', function ($myNotify,$scope, $myLoader, $myBootbo
                             $myNotifyClient.success('Gửi email thành công');
                             $scope.actions.refreshCaptcha();
                             $scope.data = {};
+                            $myLoader.hide();
                         }else{
+                            $myLoader.hide();
                             $scope.actions.refreshCaptcha();
                             $myNotifyClient.err('Gửi email thất bại');
                         }
                 }).catch(function(err){
                     console.log(err);
                     $scope.errors = err;
+                    $myLoader.hide();
                 });
         },
         refreshCaptcha: function(){
