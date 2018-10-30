@@ -25,8 +25,8 @@
                                     <input type="text" placeholder="Họ tên" class="form-control" ng-model="data.name" required>
                                 </div>
                                 <div class="form-group">
-                                    <div class="cat-color-user">Email</div>
-                                    <input type="text" class="form-control" ng-model="data.email"required data-parsley-type="email" placeholder="Email" ng-disabled="true">
+                                    <div class="cat-color-user">Tài khoản</div>
+                                    <input type="text" class="form-control" ng-model="data.account"required placeholder="Tài khoản">
                                 </div>
                                 <div class="form-group">
                                     <div class="cat-color-user">Điện thoại</div>

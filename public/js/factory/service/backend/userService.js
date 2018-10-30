@@ -8,19 +8,19 @@ ngApp.factory('$userService', function ($http, $httpParamSerializer)
     //data
 
     service.data.update = function(
-        name, email, phone, avatar
+        name, account, phone, avatar
     ){
         var params = new FormData();
         params.append('name', name);
-        params.append('email', email);
+        params.append('account', account);
         params.append('phone', phone);
         params.append('avatar', avatar);
         return params;
     };
 
-    service.data.dateLogin = function (email, password) {
+    service.data.dateLogin = function (account, password) {
         var params = new FormData();
-        params.append('email', email);
+        params.append('account', account);
         params.append('password', password);
 
         return params;

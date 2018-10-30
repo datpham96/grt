@@ -22,6 +22,9 @@ class PostCtrl extends Controller
 
     public function getPostDetail(Request $request, $id){
     	$getPostDetail = $this->postModel->filterId($id)->buildCond()->first();
+        $totalView = $getPostDetail->total_view;
+        $getPostDetail->total_view = $totalView + 1;
+        $getPostDetail->save();
 
     	return view('frontend.post.postDetail', compact('getPostDetail'));
     }

@@ -53,10 +53,11 @@ class UserCtrl extends Controller
 
         DB::beginTransaction();
         try {
-        	if($this->_isChangeUserInfo($userOldInfo, $request->name, $request->phone, $avatar_name)){
+        	if($this->_isChangeUserInfo($userOldInfo, $request->name, $request->phone, $avatar_name, $request->account)){
         		// Thực hiện update user
 	            $userInfo->name = $request->name;
-	            $userInfo->phone = $request->phone;
+                $userInfo->phone = $request->phone;
+	            $userInfo->account = $request->account;
 	            $userInfo->avatar = $avatar_name;
 	            $userInfo->save();
         	}
@@ -89,7 +90,7 @@ class UserCtrl extends Controller
         if (app('hash')->check($request->currentPassword, $userInfo->password)) {
             $userInfo->password = app('hash')->make($request->newPassword);
             $userInfo->save();
-            Auth::attempt(['email' => $user->email, 'password' => $request->newPassword]);
+            Auth::attempt(['account' => $user->account, 'password' => $request->newPassword]);
             return response()->json(['status' => true], 200);
         }
         return response()->json(['status' => false], 422);
@@ -112,12 +113,11 @@ class UserCtrl extends Controller
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required',
-            'email' => 'required|email',
+            'account' => 'required',
             'phone' => 'required',
         ], [
             'name.required' => StatusCodeConfig::CONST_VALIDATE_NAME,
-            'email.required' => StatusCodeConfig::CONST_VALIDATE_EMAIL,
-            'email.email' => StatusCodeConfig::CONST_VALIDATE_EMAIL_DUPLICATE,
+            'account.required' => StatusCodeConfig::CONST_VALIDATE_ACCOUNT,
             'phone.required' => StatusCodeConfig::CONST_VALIDATE_PHONE,
         ]
     );
@@ -126,12 +126,13 @@ class UserCtrl extends Controller
     }
 
     //check change info current user
-    private function _isChangeUserInfo($oldInfo, $name, $phone, $avatar)
+    private function _isChangeUserInfo($oldInfo, $name, $phone, $avatar, $account)
     {
         $result = false;
         if ($oldInfo->name != $name or
             $oldInfo->phone != $phone or
-            $oldInfo->avatar != $avatar
+            $oldInfo->avatar != $avatar or
+            $oldInfo->account != $account
         ) {
             $result = true;
         }

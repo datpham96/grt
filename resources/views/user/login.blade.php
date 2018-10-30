@@ -58,11 +58,11 @@
                         @{{data.errorMsg}}
                   </div>
                     <div class="form-group">
-                      <input type="text" ng-model="data.params.email" class="form-control" id="email" placeholder="Email" name="email" value="{{old('email')}}" autofocus>
+                      <input autocomplete="off" type="text" ng-model="data.params.account" class="form-control" id="account" placeholder="Tài khoản" name="account" value="{{old('account')}}" autofocus>
                   </div>
-                  <p style="color:#F56262; padding: 5px;" ng-show="data.checks.checkEmail" >Tên tài khoản không được để trống<p>
+                  <p style="color:#F56262; padding: 5px;" ng-show="data.checks.checkAccount" >Tên tài khoản không được để trống<p>
                       <div class="form-group">
-                          <input type="password" ng-model="data.params.password" class="form-control" id="password" placeholder="Password" name="password">
+                          <input autocomplete="off" type="password" ng-model="data.params.password" class="form-control" id="password" placeholder="Password" name="password">
                       </div>
                       <p style="color:#F56262; padding: 5px;" ng-show="data.checks.checkPassword" >Mật khẩu không được để trống<p>
                         

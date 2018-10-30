@@ -27,11 +27,11 @@ class LoginCtrl extends Controller
 
     public function postLogin(Request $request) {
     	$rules = [
-    		'email' =>'required',
+    		'account' =>'required',
     		'password' => 'required'
     	];
     	$messages = [
-    		'email.required' => StatusCodeConfig::CONST_VALIDATE_EMAIL,
+    		'account.required' => StatusCodeConfig::CONST_VALIDATE_ACCOUNT,
     		'password.required' => StatusCodeConfig::CONST_VALIDATE_PASSWORD,
     	];
     	$validator = Validator::make($request->all(), $rules, $messages);
@@ -40,18 +40,18 @@ class LoginCtrl extends Controller
             return response()->json(["status" => StatusCodeConfig::CONST_VALIDATE_LOGIN_ERRORS], 422);
     	}
         
-        $email = $request->input('email');
+        $account = $request->input('account');
         $password = $request->input('password');
 
         
-        $userInfo = $this->userModel->filterEmail($email)
+        $userInfo = $this->userModel->filterAccount($account)
                 ->buildCond()->first();
            
         if($userInfo == NULL) {
             return response()->json(["status" => StatusCodeConfig::CONST_VALIDATE_LOGIN_ERRORS], 422);
         }
         if (app('hash')->check($password, $userInfo->password)) {
-            Auth::attempt(['email' => $email, 'password' => $password]);
+            Auth::attempt(['account' => $account, 'password' => $password]);
             return response()->json(["status" => true]);
         }else{
             return response()->json(["status" => StatusCodeConfig::CONST_VALIDATE_LOGIN_ERRORS], 422);

@@ -21,7 +21,7 @@
 				<p>
 					{{ app('Home')->strWord($val->description, 60) }}
 				</p>
-				<i class="fa fa-clock-o"></i> {{ app('Home')->formatDate($val->created_at) }} 
+				<i class="fa fa-clock-o"></i> {{ app('Home')->formatDate($val->created_at) }}  
 			</div>	
 		</div>
 	</div>

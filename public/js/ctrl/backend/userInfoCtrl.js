@@ -20,7 +20,7 @@ ngApp.controller('userInfoCtrl', function ($myNotify, $scope, $apply, $myFile, $
                     $scope.data.avatar = $('input[name*=avatar]')[0].files[0];
                 }
                 var params = $userService.data.update(
-                    $scope.data.name, $scope.data.email, $scope.data.phone, $scope.data.avatar
+                    $scope.data.name, $scope.data.account, $scope.data.phone, $scope.data.avatar
                     );
 
                 $userService.action.update(params).then(function (resp) {

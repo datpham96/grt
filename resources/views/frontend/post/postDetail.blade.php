@@ -7,6 +7,7 @@
 <div class="col-sm-9 product">
 	<div class="detail">
 		<h4 style="color: blue">{{ $getPostDetail->name }}</h4>
+		<div style="margin-top: 5px;"><i class="fa fa-clock-o"></i> {{ app('Home')->formatDate($getPostDetail->created_at) }} <i style="margin-left: 10px;" class="fa fa-eye" aria-hidden="true"></i> {{ $getPostDetail->total_view }}</div>
 		<br />
 		<p style="text-align: justify;">{!! $getPostDetail->content !!}</p><br />
 	</div>

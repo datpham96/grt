@@ -6,6 +6,8 @@ class StatusCodeConfig {
 
     //STATUS VALIDATE
     const CONST_VALIDATE_EMAIL = 'Email không được bỏ trống';
+    const CONST_VALIDATE_ACCOUNT = 'Tài khoản không được bỏ trống';
+    const CONST_VALIDATE_ACCOUNT_DUPPLICATE = 'Tài khoản đã tồn tại';
     const CONST_VALIDATE_CAPTCHA = 'Mã captcha không được bỏ trống';
     const CONST_VALIDATE_CHECK_CAPTCHA = 'Mã captcha không đúng';
     const CONST_VALIDATE_TITLE = 'Tiêu đề không được để trống';

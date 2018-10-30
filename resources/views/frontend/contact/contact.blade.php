@@ -31,13 +31,13 @@
 			</p>
 			<div class="clearfix"></div>
 			<form>
-				<input required  type="text" name="name" ng-model="data.name" placeholder="Họ và tên" />
-				<input required type="email" name="email" ng-model="data.email" class="email" placeholder="Email" />
-				<input required type="text" class="subject" ng-model="data.title" name="title"  placeholder="Tiêu đề" />
+				<input autocomplete="off" required  type="text" name="name" ng-model="data.name" placeholder="Họ và tên" />
+				<input autocomplete="off" required type="email" name="email" ng-model="data.email" class="email" placeholder="Email" />
+				<input autocomplete="off" required type="text" class="subject" ng-model="data.title" name="title"  placeholder="Tiêu đề" />
 				<textarea required name="content" ng-model="data.content" placeholder="Nội dung của bạn"></textarea>
 				<div class="clearfix"></div>
 				<div>
-					<input required placeholder="Nhập captcha" ng-model="data.captcha" type="text" class="form-control" ng-model="data.paramData.captcha" name="captcha" >
+					<input autocomplete="off" required placeholder="Nhập captcha" ng-model="data.captcha" type="text" class="form-control" ng-model="data.paramData.captcha" name="captcha" >
 				</div>
 				<div class="col-sm-6" style="width: 170px; height: 40px;" id="refereshrecapcha"> {!! captcha_img('flat') !!}</div>
 				<div class="col-sm-1">

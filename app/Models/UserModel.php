@@ -20,6 +20,15 @@ class UserModel extends MyModel
         return $this;
     }
 
+    //filter by account
+    public function filterAccount($account){
+        if(!empty($account)){
+            $this->setFunctionCond('where', ['account', $account]);
+        }
+        
+        return $this;
+    }
+
     //filter by id
     public function filterId($id){
         if(!empty($id)){
