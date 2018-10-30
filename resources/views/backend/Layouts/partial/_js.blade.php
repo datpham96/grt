@@ -4,7 +4,8 @@
 <!-- End JS Date Picker -->
 <script src="{{ url('') }}/js/plugin/parsley/parsley.min.js"></script>
 <script src="{{ url('') }}/js/plugin/parsley/locale/vi.js"></script>
-<!-- <script src="{{ url('') }}/js/plugin/parsley/locale/en.js"></script> -->
+<script src="{{ url('') }}/js/plugin/parsley/locale/en.js"></script>
+<script src="{{ url('') }}/js/plugin/notify.min.js"></script>
 
 <script src="{{ url('') }}/js/plugin/bootbox.min.js"></script>
 
@@ -19,6 +20,7 @@
 
 
 <!--default factory-->
+
 <script src="{{ url('') }}/js/factory/myBootbox.js"></script>
 <script src="{{ url('') }}/js/factory/myAvatar.js"></script>
 <script src="{{ url('') }}/js/factory/myNotify.js"></script>

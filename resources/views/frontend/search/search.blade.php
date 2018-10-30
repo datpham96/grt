@@ -23,10 +23,10 @@
 		@endforeach
 	</div>
 	<!-- END list-product -->
-
+	<div class="clearfix"></div>
 	<!-- Pagination -->
 	<div class="row pull-right">
-		{{ $getSearch->links() }}
+		{{ $getSearch->appends(['search' => $search])->links() }}
 	</div>		
 
 </div>

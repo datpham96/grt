@@ -1,4 +1,9 @@
-<!-- <script src="{{url('js')}}/angular/angular.min.js"></script>
-<script src="{{url('js')}}/angular/paging.js"></script>
-<script src="{{ url('') }}/js/cms.js"></script>
-<script src="{{url('js')}}/angular/angular-sanitize.js"></script> -->
+<script src="{{ url('') }}/js/plugin/frontend/jquery-1.11.1.min.js"></script>
+<script src="{{url('js')}}/angularjs/angular.min.js"></script>
+<script src="{{ url('') }}/js/grt.js"></script>
+<script src="{{ url('') }}/js/angularjs/paging.js"></script>
+<script src="{{url('js')}}/angularjs/ng-Route.min.js"></script>
+<script src="{{url('js')}}/angularjs/angular-sanitize.js"></script>
+<script src="{{ url('') }}/js/plugin/parsley/parsley.min.js"></script>
+<script src="{{ url('') }}/js/plugin/parsley/locale/vi.js"></script>
+<!-- <script src="{{ url('') }}/js/plugin/parsley/locale/en.js"></script> -->

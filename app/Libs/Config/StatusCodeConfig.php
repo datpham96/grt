@@ -6,6 +6,9 @@ class StatusCodeConfig {
 
     //STATUS VALIDATE
     const CONST_VALIDATE_EMAIL = 'Email không được bỏ trống';
+    const CONST_VALIDATE_CAPTCHA = 'Mã captcha không được bỏ trống';
+    const CONST_VALIDATE_CHECK_CAPTCHA = 'Mã captcha không đúng';
+    const CONST_VALIDATE_TITLE = 'Tiêu đề không được để trống';
     const CONST_VALIDATE_PHONE = 'Điện thoại không được bỏ trống';
     const CONST_VALIDATE_NAME = 'Họ tên không được bỏ trống';
     const CONST_VALIDATE_LINK = 'Link liên kết không được bỏ trống';

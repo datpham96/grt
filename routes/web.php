@@ -81,8 +81,10 @@ Route::group(['prefix' => 'backend/rest', 'middleware'=> 'auth'], function () {
 });
 
 //Rest frontend
-Route::group(['prefix' => 'frontend/rest', 'middleware'=> 'auth'], function () {
-	Route::get("/sendMail", "Frontend\Rest\ContactCtrl@sendMail")->name('sendMail');
+Route::group(['prefix' => 'frontend/rest'], function () {
+	//send email
+	Route::post("/sendMail", "Frontend\Rest\ContactCtrl@sendMail")->name('sendMail');
+	Route::get("/refereshcapcha", "Frontend\Rest\ContactCtrl@refereshcapcha")->name('refereshcapcha');
 });
 
 //Home
@@ -115,5 +117,4 @@ Route::get('modal/{modalName}', 'ModalCtrl@index')->name('viewModal');
 //file
 Route::get('/file/avatar', 'File\FileCtrl@avatar');
 
-//email
-Route::get('/sendMail', 'Frontend\Rest\ContactCtrl@sendMail')->name('sendMail');
+//test captcha
