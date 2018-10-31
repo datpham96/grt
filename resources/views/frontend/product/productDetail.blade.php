@@ -7,7 +7,11 @@
 	<div class="details">
 		<div class="details-pro">
 			<div class="product-img-box col-sm-7">
-				<a id="image-view" title="Product Image"><img id="image" src="{{ url('') }}/{{ $getCateProductDetail->avatar }}" alt="{{ $getCateProductDetail->name }}"></a>
+				<a id="image-view" title="Product Image">
+					<div class="box">
+						<img data-pic-title="" data-pic-desc="" data-pic="{{ url('') }}/{{ $getCateProductDetail->avatar }}" src="{{ url('') }}/{{ $getCateProductDetail->avatar }}" alt="">
+					</div>					
+				</a>
 				<br />
 			</div>
 			<!-- END product-img-box -->

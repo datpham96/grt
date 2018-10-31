@@ -8,6 +8,7 @@
 <script src="{{ url('') }}/js/plugin/frontend/jquery.bxSlider.min.js"></script>
 <script src="{{ url('') }}/js/plugin/frontend/home.js"></script>
 <script src="{{ url('') }}/js/plugin/frontend/run-partnership.js"></script>
+<script src="{{ url('') }}/js/plugin/imgPreview.min.js"></script>
 <script src="{{ url('') }}/js/frontend/myJs.js"></script>
 <script src="{{ url('') }}/js/plugin/notify.min.js"></script>
 
