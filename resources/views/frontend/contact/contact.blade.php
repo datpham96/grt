@@ -39,7 +39,7 @@
 				<div>
 					<input autocomplete="off" required placeholder="Nhập captcha" ng-model="data.captcha" type="text" class="form-control" ng-model="data.paramData.captcha" name="captcha" >
 				</div>
-				<div class="col-sm-6" style="width: 170px; height: 40px;" id="refereshrecapcha"> {!! captcha_img('flat') !!}</div>
+				<div class="col-sm-6" style="width: 170px; height: 40px;margin-left: -15px;" id="refereshrecapcha" > {!! captcha_img('flat') !!}</div>
 				<div class="col-sm-1">
 					<a ng-click="actions.refreshCaptcha()"><i style="font-size: 22px; margin-top: 5px; cursor: pointer;" class="fa fa-refresh" aria-hidden="true"></i></a>
 				</div>											

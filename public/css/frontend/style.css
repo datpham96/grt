@@ -107,7 +107,7 @@ h2.title-special span{   font-family: "Roboto",sans-serif; font-size: 18px; font
 .list-recommended ul li .box-product{margin-bottom:0;}
 
 footer{margin-top:40px; position:relative;}
-.footer-top{background:#e7e8e3; padding-top:23px;}
+.footer-top{background:#b4e091; padding-top:23px;}
 .footer-top .container > div{margin-bottom:40px;}
 footer h3{font-size:16px; line-height:22px; font-weight:500; text-transform:uppercase; margin-bottom:17px;}
 footer ul li{list-style:none;}
@@ -186,7 +186,7 @@ footer .col-sm-3 p{margin-top:20px;}
 .contact input.email{width:47%; margin-left:3%;}
 .contact input.subject, .contact textarea{width:100%; margin-bottom:20px; border:1px solid #ddd; border-radius:5px; padding:13px 10px;  line-height:18px; font-size:14px;}
 .contact textarea{height:200px;}
-.contact button{font-size:14px; background:#2ba535; color:#fff; line-height:18px; border:0; border-radius:4px;width: 90px;}
+.contact button{font-size:14px; background:#2ba535; color:#fff; line-height:18px; border:0; border-radius:4px;width: 90px;margin-top: 12px;}
 .contact ul{margin:0px auto; display:table;}
 .contact ul li{float:left; margin-right:20px;}
 .contact ul li:last-child{  margin-right:0px;}
@@ -296,6 +296,10 @@ footer .col-sm-3 p{margin-top:20px;}
 	.product-thumb  ul li{  height:85px; width:85px !important}
 	/* end style details */
 	.detail img{width: 100%;height: auto;}
+	.fa-refresh{
+		margin-top: 19px !important;
+		margin-left: 10px;
+	}
 }	
 @media(max-width:667px){  
 	.header-bottom .container > div{width:100%;}
@@ -314,6 +318,10 @@ footer .col-sm-3 p{margin-top:20px;}
 	.list-recommended .bx-wrapper{width:270px !important;}
 	.footer-top .container > div{width:50%}
 	footer .col-sm-3{float:left !important}
+	.fa-refresh{
+		margin-top: 19px !important;
+		margin-left: 35px;
+	}
 }
 @media(max-width:414px){
 	.social-icons, .contact-info{width:100%; text-align: center;}
