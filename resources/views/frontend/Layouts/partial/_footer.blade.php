@@ -2,7 +2,7 @@
 	<div class="footer-top">
 		<div class="container">
 			<div class="col-sm-2">
-				<h3>Trang chủ</h3>
+				<h3 style="text-decoration: underline">Trang chủ</h3>
 				<ul>
 					<li><a class="{{ request()->is('introduce') ? 'active-footer' : '' }}" href="{{ route('introduceF') }}" title="">Giới thiệu</a></li>
 					@if(app('Home')->getCategory())
@@ -27,22 +27,26 @@
 				</ul>
 			</div>
 			<div class="col-md-4">
-				<h3>Giới thiệu</h3>
+				<h3 style="text-decoration: underline">Giới thiệu</h3>
 				<ul>
-					<p style="text-align: justify;">Chúng tôi chuyên cung cấp cho khách hàng các loại Lọc và phụ tùng thay thế chất lượng cao được nhập khẩu trực tiếp từ các hãng lớn trên thế giới.
-					Với năng lực, chất lượng hoạt động kinh doanh dịch vụ.</p>
+					<p style="text-align: left">
+						Công ty TNHH phát triển kỹ thuật xanh – Green Technology Development Company Limited.
+					</p>
+					<p style="text-align: justify;">
+
+					</p>
 				</ul>
 			</div>
 			<div class="col-md-4">
-				<h3>Thông tin</h3>
-
-				<li>Địa chỉ: Quận Hai Bà Trưng, thành phố Hà Nội</li>
-				<li>Telephone: 3234234234 </li>
-				<li>Mobile : 2348209384</li>
-				<li>Web: greeTech.com.vn </li>
+				<h3 style="text-decoration: underline">Thông tin</h3>
+				<div style="margin-bottom: 3px;">Trụ sở chính: Số 14/91/5 Phố Ngô Thì Sỹ, Phường Vạn Phúc, Quận Hà Đông, TP Hà Nội</div>				
+				<div style="margin-bottom: 3px;">Văn phòng đại diện: Số 6 Lô A9 Đầm Trấu, Phường Bạch Đằng, Quận Hai Bà Trưng, Hà Nội</div>
+				<div style="margin-bottom: 3px;">Email: huuhung@grt.com.vn</div>
+				<div style="margin-bottom: 3px;">Điện thoại: +84.915.801.684</div>
+				<div style="margin-bottom: 3px;">Website: www.grt.com.vn</div>
 			</div>
 			<div class="col-md-2">
-				<h3>Mạng xã hội</h3>
+				<h3 style="text-decoration: underline">Mạng xã hội</h3>
 				<a href="#" title=""><i class="fa fa-facebook" aria-hidden="true"></i></a>
 				<a href="#" title=""><i class="fa fa-twitter" aria-hidden="true"></i></a>
 				<a href="#" title=""><i class="fa fa-google-plus" aria-hidden="true"></i></a>

@@ -16,13 +16,13 @@
                                     <div style="margin-top: 5px; color: red;" ng-repeat="err in errors.name">@{{err}}</div>
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label class="col-sm-3 control-label" for="demo-is-inputsmall">Đường dẫn: </label>
                                 <div class="col-sm-9">
                                     <input autocomplete="off" type="text" placeholder="Đường dẫn" class="form-control input-sm"  ng-model="getData.link" id="demo-is-inputsmall" required >
                                     <div style="margin-top: 5px; color: red;" ng-repeat="err in errors.link">@{{err}}</div>
                                 </div>
-                            </div>
+                            </div> -->
                            
                             <div class="form-group">
                                 <label for="demo-vs-definput" class="control-label col-sm-3">Ảnh đại diện: </label>

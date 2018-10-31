@@ -51,11 +51,13 @@
 		<div></div>
 		<div class="col-sm-4">
 			<h2 class="title-special"><span>Thông tin liên lạc</span></h2>
-			<p>Công ty TNHH Green Tech</p>
-			<p>Số 95, đường Hàm Nghi, Quận Hai Bà Trưng, Tp. Hà Nội</p>
-			<p>Mobile: +2346 17 38 93</p>
-			<p>Fax: 1-714-252-0026</p>
-			<p>Email: <a href="#" title="">admin@grt.com</a></p>
+			<p>Công ty TNHH phát triển kỹ thuật xanh – Green Technology Development Company
+Limited</p>
+			<p><b>Trụ sở chính</b>: Số 14/91/5 Phố Ngô Thì Sỹ, Phường Vạn Phúc, Quận Hà Đông, TP Hà Nội</p>
+			<p><b>Văn phòng đại diện</b>: Số 6 Lô A9 Đầm Trấu, Phường Bạch Đằng, Quận Hai Bà Trưng, Hà Nội</p>
+			<p><b>Email</b>: huuhung@grt.com.vn</p>
+			<p><b>Điện thoại</b>: +84.915.801.684</p>
+			<p><b>Website</b>: <a style="color: blue text-decoration: underline" href="http://www.grt.com.vn">grt.com.vn</a></p>
 			<br />
 			<h2 class="title-special"><span>Mạng xã hội</span></h2>
 			<ul>

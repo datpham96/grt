@@ -43,7 +43,7 @@
                         <tr>
                             <th>STT</th>
                             <th>Tên đốc tác</th>
-                            <th>link</th>
+                            <!-- <th>link</th> -->
                             <th>Ảnh</th>
                             <th>Hành động</th>
                         </tr>
@@ -52,7 +52,7 @@
                         <tr ng-repeat="(key, val) in data.list">
                             <td>@{{ actions.isSTT(key + 1) }}</td>
                             <td>@{{ val.name }}</td>
-                            <td>@{{ val.link }}</td>
+                            <!-- <td>@{{ val.link }}</td> -->
                             <td>
                                 <img style="width: 70px" ng-src="{{url('')}}/@{{val.avatar}}" alt="@{{val.name}}">
                             </td>

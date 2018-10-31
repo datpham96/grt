@@ -1,4 +1,4 @@
-{{ request()->get('id') }}
+
 <div class="left-sidebar">
     <div class="left-category">
         <div class="list-group" style="text-align: center";>
@@ -50,10 +50,11 @@
             <a href="#" class="list-group-item list-group-item-action">
                 <div class="owl-carousel owl-theme">
                     @foreach(app('Home')->getLink() as $val)
-                    <a href="{{ $val->link }}"">
-                    <div class="item-partner"><img src="{{url('')}}/{{$val['avatar']}}"alt="">
+                    
+                    <div class="item-partner">
+                        <img src="{{url('')}}/{{$val['avatar']}}" alt="">
                     </div>
-                    </a>
+                    
                     @endforeach
                 </div>
             </a>
