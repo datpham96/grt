@@ -62,7 +62,7 @@
 				<div class="panel panel-default my-btn-image">
 					<div class="panel-body">
 						<div class="vietbai_images">
-							<h4>Ảnh bài viết</h4>
+							<h4>Ảnh sản phẩm</h4>
 							<div class="input-group my-btn-image" >
                                 <span class="input-group-btn">
                                     <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary">

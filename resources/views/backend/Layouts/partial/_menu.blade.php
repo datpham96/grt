@@ -71,7 +71,7 @@
                                 <!-- <i class="fa fa-user"></i> -->
                                 <i class="ti-link"></i>
                                 <span class="menu-title">
-                                    <b>Liên kết</b>
+                                    <b>Đối tác</b>
                                 </span>
                             </a>
                         </li>                        
@@ -80,7 +80,7 @@
                                 <!-- <i class="fa fa-user"></i> -->
                                 <i class="ti-info"></i>
                                 <span class="menu-title">
-                                    <b>Liên hệ</b>
+                                    <b>Hỗ trợ</b>
                                 </span>
                             </a>
                         </li>
