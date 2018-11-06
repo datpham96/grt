@@ -325,6 +325,9 @@ footer .col-sm-3 p{margin-top:20px;}
 		margin-top: 19px !important;
 		margin-left: 35px;
 	}
+	.header-menu .form-search{
+	 	width: 237px!important ;
+	 }
 }
 @media(max-width:414px){
 	.social-icons, .contact-info{width:100%; text-align: center;}
