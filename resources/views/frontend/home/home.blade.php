@@ -25,7 +25,6 @@
 			<!-- END box-product -->	
 		</div>
 		@endforeach
-		
 	</div>
 	<!-- END list-product -->
 

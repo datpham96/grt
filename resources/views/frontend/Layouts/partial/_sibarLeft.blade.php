@@ -6,6 +6,7 @@
             @foreach(app('Home')->getCategory() as $val)
             <a href="{{ url('') }}/category/{{ $val['id'] }}" class="list-group-item list-group-item-action {{ (request('id') == $val['id']) ? 'active-item' : '' }}">{{ $val['name'] }}</a>
             @endforeach
+            
             <!-- Lĩnh vực kinh doanh -->
           <!--   <a href="#" class="list-group-item list-group-item-success active" style="background-color:#25a003;border-color:#25a003">LĨNH VỰC KINH DOANHA</a>
             <ul class="menu">
