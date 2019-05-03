@@ -1,11 +1,9 @@
-*{font:15px; line-height:18px; font-weight:300;}
-
+*{font:14px   'Roboto', sans-serif; line-height:18px; font-weight:300;}
 a:hover, a:focus, a:active{ outline:0px; text-decoration:none;}
 h1, h2, h3, h4, h5, h6, p, ul{margin:0; padding:0;}
 ul li{list-style:none;}
 body, .pagination{margin:0;background-color:#f9f9f9;}
 body a, body a i{transition: all 0.5s ease 0s;}
-
 .lazy-image{min-height:100px; background:url(../../images/frontend/AjaxLoader.gif) no-repeat center center; width:100%}
 /*.header-top{background:url(../images/luat.jpg) no-repeat top center; min-height: 100px}
 */header ul li{display: inline-block; margin-right:30px;}
@@ -30,7 +28,7 @@ header ul li a i{  color:#696763;}
 .header-menu .navbar-header{display:none;}
 .navbar-inverse .navbar-nav > .active > a,.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:focus, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .active > a:focus, .navbar-inverse .navbar-nav > .active > a:hover{background:none; color:#23231f;}
 .header-menu .container-fluid{padding:0;}
-.header-menu .navbar li a{letter-spacing: 0,5px;color:white; font-size:17px; line-height:22px; text-transform: capitalize; padding:15px 0;}
+.header-menu .navbar li a{letter-spacing: 0,5px;color:white; font-size:16px; line-height:22px; text-transform: capitalize; padding:15px 0;}
 .header-menu .navbar li a:hover{color:#fe980f;  }
 .header-menu .navbar li a:hover .caret, .header-menu .navbar li.open a .caret{color:#fe980f;  }
 .header-menu .navbar li .dropdown-menu{background:rgba(0, 0, 0, 0.6); padding:10px 20px; border-radius:0;}
@@ -56,17 +54,17 @@ header ul li a i{  color:#696763;}
 
 h2.title-special{margin-bottom:40px;  border-bottom: 2px solid #f5f5f5;  text-align: center; }
 h2.title-special span{   font-family: "Roboto",sans-serif; font-size: 18px; font-weight: 700; position: relative; top:9px; text-transform: uppercase; z-index: 3;padding:0 15px; background:#fff;}
-.content-product .left-sidebar  ul.menu{border:1px solid #f7f7f0; padding:20px 0}
+.content-product .left-sidebar  ul.menu{border:1px solid #f7f7f0; padding:0px 0}
 .content-product .left-sidebar  ul.menu .sub-menu{display:none; padding:10px 0}
 .content-product .left-sidebar  ul.menu li{margin-bottom:10px; list-style:none; position:relative;}
 .content-product .left-sidebar  ul.menu li:last-child{margin-bottom:0px;}
 .content-product .left-sidebar  ul.menu li a{color: #696763; font-family: "Roboto",sans-serif; font-size: 14px; padding:0 20px; text-decoration: none; text-transform: uppercase; line-height:20px; font-weight:500; display: inline-block; width:100%;}
 .content-product .left-sidebar  ul.menu li a:hover, .content-product .left-sidebar  ul.menu li.active > a{ color: #fe980f;}
 .content-product .left-sidebar  ul.menu li .icon-cat{ display: none; cursor:pointer;}  
-.content-product .left-sidebar  ul.menu li.par > .icon-cat{display:block;  text-indent:-9999px; background: url(../../images/frontend/bt-submenu.png) no-repeat center center; width:20px; height:20px; position:absolute; top:0; right:20px;}
+.content-product .left-sidebar  ul.menu li.par > .icon-cat{display:block;  text-indent:-9999px; background: url(../../images/frontend/bt-submenu.png) no-repeat center center; width:20px; height:20px; position:absolute; top:8px; right:20px;}
 .content-product .left-sidebar  ul.menu li.par.active > .icon-cat{ background: url(../../images/frontend/bt-submenu-active.png) no-repeat center center;   }
 .content-product .left-sidebar .sub-menu  ul li{margin-bottom:3px;}
-.content-product .left-sidebar .sub-menu  ul li a{color: #696763; font-family: "Roboto",sans-serif; font-size: 12px; padding:0 20px; text-decoration: none; text-transform: uppercase; line-height:17px; font-weight:300; padding-left:40px;}
+.content-product .left-sidebar .sub-menu  ul li a{color: #696763; font-family: "Roboto",sans-serif; font-size: 14px; padding:0 20px; text-decoration: none; text-transform: uppercase; line-height:20px; font-weight:300; padding-left:40px;}
 
 .left-brand{margin-top:20px;}
 .left-brand .pull-right{padding-right:20px; font-weight:400;}
@@ -80,8 +78,8 @@ h2.title-special span{   font-family: "Roboto",sans-serif; font-size: 18px; font
 .box-product .image a { display: table-cell; vertical-align:middle;}
 .box-product .image img{ width: 268px;height: 249px;}
 .box-product .price-pro{margin-top:15px;}
-.box-product .price-pro span{ font-size:24px; font-family:'Roboto' sans-serif; font-weight:700;color:#fe980f; line-height:30px;}
-.box-product .price-pro .price-old{ font-size:20px;  font-weight:400; color:#fe980f; text-decoration: line-through; padding-left:10px;}
+.box-product .price-pro span{ font-size:24px; font-family:'Roboto' sans-serif; font-weight:700; line-height:30px;}
+.box-product .price-pro .price-old{ font-size:20px;  font-weight:400; text-decoration: line-through; padding-left:10px;}
 .box-product .name-pro {margin-top:10px;}
 .box-product .name-pro a{ font-size:14px;  font-weight:400; color:#696763; line-height:18px;}
 .box-product .name-pro:hover  a{ color:#fe980f; }
@@ -108,8 +106,8 @@ h2.title-special span{   font-family: "Roboto",sans-serif; font-size: 18px; font
 
 footer{margin-top:40px; position:relative;}
 .footer-top{background:#b4e091; padding-top:23px;}
-.footer-top .container > div{margin-bottom:40px;}
-footer h3{font-size:16px; line-height:22px; font-weight:500; text-transform:uppercase; margin-bottom:17px;}
+.footer-top .container > div{margin-bottom:3px;}
+footer h3{font-size:16px;font-weight:550;  color:#666663; text-transform:uppercase; margin-bottom:17px;}
 footer ul li{list-style:none;}
 footer ul li a, footer p{font-size:14px; line-height:18px; font-weight:300; padding:6px 0; display: inline-block;}
 footer ul li a:hover{color:#fe980f;}
@@ -319,7 +317,7 @@ footer .col-sm-3 p{margin-top:20px;}
 	.social-icons{display:block; width:auto; float: right; }
 	.header-top .social-icons ul li a{ padding:13px 8px;}
 	.list-recommended .bx-wrapper{width:270px !important;}
-	.footer-top .container > div{width:50%}
+	.footer-top .container > div{width:100%}
 	footer .col-sm-3{float:left !important}
 	.fa-refresh{
 		margin-top: 19px !important;
@@ -366,4 +364,22 @@ footer .footer-top .active-footer{
 
 .hover-under:hover{
 	color: orange !important;
+} 
+
+/*style category bussiness*/
+.content-product .left-sidebar ul li.cat-bussiness  {
+	position: relative;
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: -2px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    width: 261.5px;
+}
+
+.list-group a{
+	font-size: 16px;
+	text-transform: uppercase;
+    font-family: "Roboto",sans-serif;
+
 }

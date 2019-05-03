@@ -1,6 +1,6 @@
 <div class="header-menu">
 	<div class="container" style="background-color: #25a003">
-		<div class="col-sm-7 col-xs-7 menu-top">
+		<div class="col-sm-9 col-xs-9 menu-top">
 			<nav class="navbar navbar-inverse">
 				<div class="container-fluid">
 					<div class="navbar-header">
@@ -9,6 +9,7 @@
 					<ul class="nav navbar-nav">
 						<li class="{{ request()->is('/') ? 'active' : '' }}"><a href="{{ url('') }}">TRANG CHỦ</a></li>
 						<li class="{{ request()->is('introduce') ? 'active' : '' }}"><a href="{{ route('introduceF') }}">GIỚI THIỆU</a></li>
+						<li class="{{ request()->is('post') ? 'active' : '' }}"><a href="{{ route('postF') }}">LĨNH VỰC KINH DOANH</a></li>
 						<li class="dropdown">
 							<a class="dropdown-toggle" data-toggle="dropdown" href="#">SẢN PHẨM
 								<span class="caret"></span></a>
@@ -18,13 +19,13 @@
 									@endforeach
 								</ul>
 							</li>
-							<li class="{{ request()->is('post') ? 'active' : '' }}"><a href="{{ route('postF') }}">TIN TỨC</a></li>							
+							<li class="{{ request()->is('post') ? 'active' : '' }}"><a href="{{ route('postF') }}">TIN TỨC</a></li>	
 							<li class="{{ request()->is('contact') ? 'active' : '' }}"><a href="{{ route('contactF') }}">LIÊN HỆ</a></li>
 						</ul>
 					</div>
 				</nav>
 			</div>
-			<div class="col-sm-5 col-xs-5 box-search" >
+			<div class="col-sm-3 col-xs-3 box-search" >
 				<form action="{{ route('getSearchF') }}" method="get" class="form-search" style="width: 270px;border-radius: 25px;">
 					<input type="text" name="search" class="input-text" />
 					<button title="Tìm kiếm" type="submit" class="sub_search">Tìm kiếm</button>

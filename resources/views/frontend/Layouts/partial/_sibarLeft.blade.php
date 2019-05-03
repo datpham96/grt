@@ -6,7 +6,23 @@
             @foreach(app('Home')->getCategory() as $val)
             <a href="{{ url('') }}/category/{{ $val['id'] }}" class="list-group-item list-group-item-action {{ (request('id') == $val['id']) ? 'active-item' : '' }}">{{ $val['name'] }}</a>
             @endforeach
-           
+            <!-- Lĩnh vực kinh doanh -->
+          <!--   <a href="#" class="list-group-item list-group-item-success active" style="background-color:#25a003;border-color:#25a003">LĨNH VỰC KINH DOANHA</a>
+            <ul class="menu">
+                <li class="cat-bussiness"><a href="#" title="">Sportswear</a> <span class="icon-cat">click</span>
+                    <div class="sub-menu">
+                        <ul>
+                            <li><a href="#" title="">Nike</a> <span class="icon-cat">click</span></li>
+                            <li><a href="#" title="">Under Armour</a> <span class="icon-cat">click</span></li>
+                            <li><a href="#" title="">Adidas</a> <span class="icon-cat">click</span></li>
+                            <li><a href="#" title="">Puma</a> <span class="icon-cat">click</span></li>
+                            <li><a href="#" title="">ASICS</a> <span class="icon-cat">click</span></li>
+                        </ul>
+                    </div>
+                </li>
+                <li  class="cat-bussiness"cat-bussiness"><a href="#" title="" >Mens</a> <span class="icon-cat">click</span></li>
+                <li  class="cat-bussiness"><a href="#" title="" >Womens </a> <span class="icon-cat">click</span></li>
+            </ul> -->
         </div>
     </div>  
     <!-- END left-category -->
