@@ -2,12 +2,13 @@
 <div class="left-sidebar">
     <div class="left-category">
         <div class="list-group" style="text-align: center";>
+          <!-- Danh mục sản phẩm -->
             <a href="#" class="list-group-item list-group-item-success active" style="background-color:#25a003;border-color:#25a003">DANH MỤC SẢN PHẨM</a>
             @foreach(app('Home')->getCategory() as $val)
             <a href="{{ url('') }}/category/{{ $val['id'] }}" class="list-group-item list-group-item-action {{ (request('id') == $val['id']) ? 'active-item' : '' }}">{{ $val['name'] }}</a>
             @endforeach
-            
-            <!-- Lĩnh vực kinh doanh -->
+            git 
+          <!-- Lĩnh vực kinh doanh -->
           <!--   <a href="#" class="list-group-item list-group-item-success active" style="background-color:#25a003;border-color:#25a003">LĨNH VỰC KINH DOANHA</a>
             <ul class="menu">
                 <li class="cat-bussiness"><a href="#" title="">Sportswear</a> <span class="icon-cat">click</span>

@@ -51,8 +51,7 @@
 		<div></div>
 		<div class="col-sm-4">
 			<h2 class="title-special"><span>Thông tin liên lạc</span></h2>
-			<p>Công ty TNHH phát triển kỹ thuật xanh – Green Technology Development Company
-			Limited</p>
+			<p>Công ty TNHH phát triển kỹ thuật xanh – Green Technology Development Company Limited</p>
 			<p><b>Trụ sở chính</b>: Số 14/91/5 Phố Ngô Thì Sỹ, Phường Vạn Phúc, Quận Hà Đông, TP Hà Nội</p>
 			<p><b>Văn phòng đại diện</b>: Số 6 Lô A9 Đầm Trấu, Phường Bạch Đằng, Quận Hai Bà Trưng, Hà Nội</p>
 			<p><b>Email</b>: huuhung@grt.com.vn</p>
