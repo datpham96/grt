@@ -38,6 +38,14 @@ Route::group(['prefix' => '/admin', 'middleware'=> ['web', 'auth']], function ()
 
 	//support
 	Route::get("/supports", "Backend\Supports\SupportsCtrl@supports")->name('supports');
+
+	//business
+	Route::get("/business", "Backend\Business\BusinessCtrl@business")->name('business');
+
+	//post business
+	Route::get("/postBusiness", "Backend\PostBusiness\PostBusinessCtrl@mainBusiness")->name('postBusiness');
+	Route::get("/mainPostBusiness", "Backend\PostBusiness\PostBusinessCtrl@postBusiness")->name('mainPostBusiness');
+	Route::get("/postDetailBusiness", "Backend\PostBusiness\PostBusinessCtrl@postDetailBusiness")->name('postDetailBusiness');
 });
 
 //Rest backend
@@ -65,12 +73,27 @@ Route::group(['prefix' => 'backend/rest', 'middleware'=> 'auth'], function () {
 	Route::post('/category/{id}', 'Backend\Rest\CategoryCtrl@update');
 	Route::delete('/category/{id}', 'Backend\Rest\CategoryCtrl@delete');
 
+	//business
+	Route::get('/business', 'Backend\Rest\BusinessCtrl@list');
+	Route::post('/business', 'Backend\Rest\BusinessCtrl@insert');
+	Route::post('/business/{id}', 'Backend\Rest\BusinessCtrl@update');
+	Route::delete('/business/{id}', 'Backend\Rest\BusinessCtrl@delete');
+	Route::get('/businessParent', 'Backend\Rest\BusinessCtrl@listParent');
+	Route::get('/businessAllParent', 'Backend\Rest\BusinessCtrl@businessAllParent');
+
 	//post
 	Route::get('/post', 'Backend\Rest\PostCtrl@list');
 	Route::get('/post/{id}', 'Backend\Rest\PostCtrl@info');
 	Route::post('/post', 'Backend\Rest\PostCtrl@insert');
 	Route::post('/post/{id}', 'Backend\Rest\PostCtrl@update');
 	Route::delete('/post/{id}', 'Backend\Rest\PostCtrl@delete');
+
+	//post business
+	Route::get('/postBusiness', 'Backend\Rest\PostBusinessCtrl@list');
+	Route::get('/postBusiness/{id}', 'Backend\Rest\PostBusinessCtrl@info');
+	Route::post('/postBusiness', 'Backend\Rest\PostBusinessCtrl@insert');
+	Route::post('/postBusiness/{id}', 'Backend\Rest\PostBusinessCtrl@update');
+	Route::delete('/postBusiness/{id}', 'Backend\Rest\PostBusinessCtrl@delete');
 
 	//product
 	Route::get('/product', 'Backend\Rest\ProductCtrl@list');
@@ -117,4 +140,5 @@ Route::get('modal/{modalName}', 'ModalCtrl@index')->name('viewModal');
 //file
 Route::get('/file/avatar', 'File\FileCtrl@avatar');
 
-//test captcha
+//business
+Route::get("/business", "Frontend\Business\BusinessCtrl@getBusiness")->name('businessF');

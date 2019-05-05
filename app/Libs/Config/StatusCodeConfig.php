@@ -32,4 +32,5 @@ class StatusCodeConfig {
     const CONST_STATUS_PAGE_FORMAT_ERR = 'Số trang phải là số';
 
     const CONST_STATUS_CHECK_ID_CATEGORY_EXISTS = "Không thể xóa chuyên mục";
+    const CONST_STATUS_CHECK_ID_POST_EXISTS = "Không thể xóa bài viết";
 }

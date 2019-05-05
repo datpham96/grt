@@ -9,7 +9,7 @@
 					<ul class="nav navbar-nav">
 						<li class="{{ request()->is('/') ? 'active' : '' }}"><a href="{{ url('') }}">TRANG CHỦ</a></li>
 						<li class="{{ request()->is('introduce') ? 'active' : '' }}"><a href="{{ route('introduceF') }}">GIỚI THIỆU</a></li>
-						<li class="{{ request()->is('post') ? 'active' : '' }}"><a href="{{ route('postF') }}">LĨNH VỰC KINH DOANH</a></li>
+						<li class="{{ request()->is('business') ? 'active' : '' }}"><a href="{{ route('businessF') }}">LĨNH VỰC KINH DOANH</a></li>
 						<li class="dropdown">
 							<a class="dropdown-toggle" data-toggle="dropdown" href="#">SẢN PHẨM
 								<span class="caret"></span></a>

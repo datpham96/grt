@@ -16,7 +16,7 @@ class DatabaseUserSeeder extends Seeder
             [
                 'password' => bcrypt('123456'),
                 'name' => 'Quản trị hệ thống',
-                'email' => 'admin@gmail.com',
+                'account' => 'admin',
                 'phone' => '123456789',
                 'avatar' => ''
             ],

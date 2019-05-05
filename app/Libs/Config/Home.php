@@ -5,6 +5,7 @@ use App\Models\ProductModel;
 use App\Models\CategoryModel;
 use App\Models\LinkModel;
 use App\Models\SupportModel;
+use App\Models\BusinessModel;
 use Carbon\Carbon;
 use Illuminate\Support\Str;
 
@@ -13,12 +14,14 @@ class Home {
 	private $supportModel;
 	private $linkModel;
 	private $productModel;
+	private $businessModel;
 
 	public function __construct(){
     	$this->categoryModel = new CategoryModel();
     	$this->supportModel = new SupportModel();
     	$this->linkModel = new LinkModel();
     	$this->productModel = new ProductModel();
+    	$this->businessModel = new BusinessModel();
     }
 
 	public function getProduct(){
@@ -29,6 +32,19 @@ class Home {
 
 	public function getProductByCate($id){
 		$getData = $this->productModel->filterCateId($id)->buildCond()->orderBy('created_at', 'desc')->limit(3)->get();
+		return $getData;
+	}
+
+	public function getCateBusiness(){
+		$getData = $this->businessModel->where('parent_id','=',0)->get();
+
+		return $getData;
+	}
+
+	public function getChild($parentId){
+
+		$getData = $this->businessModel->filterParentId($parentId)->buildCond()->get();
+
 		return $getData;
 	}
 

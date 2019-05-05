@@ -2,29 +2,38 @@
 <div class="left-sidebar">
     <div class="left-category">
         <div class="list-group" style="text-align: center";>
+            @if(!request()->is('business'))
           <!-- Danh mục sản phẩm -->
             <a href="#" class="list-group-item list-group-item-success active" style="background-color:#25a003;border-color:#25a003">DANH MỤC SẢN PHẨM</a>
             @foreach(app('Home')->getCategory() as $val)
             <a href="{{ url('') }}/category/{{ $val['id'] }}" class="list-group-item list-group-item-action {{ (request('id') == $val['id']) ? 'active-item' : '' }}">{{ $val['name'] }}</a>
             @endforeach
-            git 
+            @endif
+
+            @if(request()->is('business'))
           <!-- Lĩnh vực kinh doanh -->
-          <!--   <a href="#" class="list-group-item list-group-item-success active" style="background-color:#25a003;border-color:#25a003">LĨNH VỰC KINH DOANHA</a>
+            <a href="#" class="list-group-item list-group-item-success active" style="background-color:#25a003;border-color:#25a003">LĨNH VỰC KINH DOANH</a>
             <ul class="menu">
-                <li class="cat-bussiness"><a href="#" title="">Sportswear</a> <span class="icon-cat">click</span>
+                @foreach(app('Home')->getCateBusiness() as $val)
+                <li class="cat-bussiness"><a href="#" title="">{{ $val->name }}</a>
+                    @if(count(app('Home')->getChild($val->id)) > 0) 
+                        <span class="icon-cat">click</span>
+                    @endif
+                    @if(count(app('Home')->getChild($val->id)) > 0)
                     <div class="sub-menu">
                         <ul>
-                            <li><a href="#" title="">Nike</a> <span class="icon-cat">click</span></li>
-                            <li><a href="#" title="">Under Armour</a> <span class="icon-cat">click</span></li>
-                            <li><a href="#" title="">Adidas</a> <span class="icon-cat">click</span></li>
-                            <li><a href="#" title="">Puma</a> <span class="icon-cat">click</span></li>
-                            <li><a href="#" title="">ASICS</a> <span class="icon-cat">click</span></li>
+                            
+                                @foreach(app('Home')->getChild($val->id) as $valChild)
+                                    <li><a href="#" title="">{{ $valChild->name }}</a></li>
+                                @endforeach
+                           
                         </ul>
                     </div>
+                     @endif
                 </li>
-                <li  class="cat-bussiness"cat-bussiness"><a href="#" title="" >Mens</a> <span class="icon-cat">click</span></li>
-                <li  class="cat-bussiness"><a href="#" title="" >Womens </a> <span class="icon-cat">click</span></li>
-            </ul> -->
+                @endforeach
+            </ul>
+            @endif
         </div>
     </div>  
     <!-- END left-category -->

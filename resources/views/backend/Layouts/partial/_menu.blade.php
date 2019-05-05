@@ -66,6 +66,24 @@
                                 </span>
                             </a>
                         </li>
+                        <li class="{{ request()->is('admin/business') ? 'active-link' : '' }}">
+                            <a href="{{url('')}}/admin/business">
+                                <!-- <i class="fa fa-user"></i> -->
+                                <i class="ti-stats-down"></i>
+                                <span class="menu-title">
+                                    <b>Lĩnh vực kinh doanh</b>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="{{ request()->is('admin/postBusiness') ? 'active-link' : '' }}">
+                            <a href="{{url('')}}/admin/postBusiness">
+                                <!-- <i class="fa fa-user"></i> -->
+                                <i class="ti-pencil"></i>
+                                <span class="menu-title">
+                                    <b>Bài viết kinh doanh</b>
+                                </span>
+                            </a>
+                        </li>
                         <li class="{{ request()->is('admin/links') ? 'active-link' : '' }}">
                             <a href="{{url('')}}/admin/links">
                                 <!-- <i class="fa fa-user"></i> -->
