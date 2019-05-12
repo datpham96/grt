@@ -4,7 +4,7 @@ ngApp.controller('postBusinessCtrl', function (
     $myBootbox, $routeParams, $businessService){   
     $scope.formData;
     $scope.domAvatar;
-    $scope.title = "Thêm bài viết";
+    $scope.title = "Thêm sản phẩm";
     $scope.data = {
         list: [],
         info: {},
@@ -74,7 +74,7 @@ ngApp.controller('postBusinessCtrl', function (
                     $myLoader.show();
                     $postBusinessService.action.update(params,id).then(function(resp){
                         if(resp.data.status){
-                            $myNotify.success("Sửa bài viết thành công");
+                            $myNotify.success("Sửa sản phẩm thành công");
                             $timeout(function(){
                                 $window.location.href= $postInfo.redirectProduct;
                             }, 1000);
@@ -83,7 +83,7 @@ ngApp.controller('postBusinessCtrl', function (
                     }).catch(function(err){
                         $myLoader.hide();
                         console.log(err);
-                        $myNotify.err("Sửa bài viết thất bại");
+                        $myNotify.err("Sửa sản phẩm thất bại");
                         $scope.data.errors = err.data;
                     });
                 }
@@ -92,7 +92,7 @@ ngApp.controller('postBusinessCtrl', function (
                     $myLoader.show();
                     $postBusinessService.action.insert(params).then(function(resp){
                         if(resp.data.status){
-                            $myNotify.success("Thêm bài viết thành công");
+                            $myNotify.success("Thêm sản phẩm thành công");
                             $timeout(function(){
                                 $window.location.href= $postInfo.redirectProduct;
                             }, 1000);
@@ -102,7 +102,7 @@ ngApp.controller('postBusinessCtrl', function (
                     }).catch(function(err){
                         $myLoader.hide();
                         console.log(err);
-                        $myNotify.err("Thêm bài viết thất bại");
+                        $myNotify.err("Thêm sản phẩm thất bại");
                         $scope.data.errors = err.data;
                     });
                 }
@@ -113,16 +113,16 @@ ngApp.controller('postBusinessCtrl', function (
                 if (result) {
                     $postBusinessService.action.delete(id).then(function(resp){
                         if(resp.status){
-                            $myNotify.success('Xóa bài viết thành công!');
+                            $myNotify.success('Xóa sản phẩm thành công!');
                         }else{
-                            $myNotify.err('Xóa bài viết thất bại!');
+                            $myNotify.err('Xóa sản phẩm thất bại!');
                         }
                         $myLoader.hide();
                         $($scope.domData).modal('hide');
                         processData.getList();
                     }).catch(function(err){
                         $($scope.domData).modal('hide');
-                        $myNotify.err('Xóa bài viết thành công!');
+                        $myNotify.err('Xóa sản phẩm thất bại');
                         $myLoader.hide();
                     });
                 }
@@ -136,7 +136,7 @@ ngApp.controller('postBusinessCtrl', function (
     });
     if(id > 0){
         processData.getInfo(id);
-        $scope.title = "Sửa bài viết";
+        $scope.title = "Sửa sản phầm";
     }else{
         $("#holder").attr('src',$myAvatar.imageDefault());
     }

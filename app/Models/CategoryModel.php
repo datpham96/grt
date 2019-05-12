@@ -18,6 +18,15 @@ class CategoryModel extends MyModel
         return $this;
     }
 
+    //filter by parentId
+    public function filterParentId($parentId){
+        if(!empty($parentId)){
+            $this->setFunctionCond('where', ['parent_id', $parentId]);
+        }
+        
+        return $this;
+    }
+
     //filter by name
     public function filterName($name){
         if(!empty($name)){

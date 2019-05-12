@@ -3,7 +3,7 @@
     <!--Page Title-->
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <div id="page-title">
-        <h1 class="page-header text-overflow"> Quản lý bài viết</h1>
+        <h1 class="page-header text-overflow"> Quản lý sản phẩm kinh doanh</h1>
     </div>
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <!--End page title-->
@@ -14,7 +14,7 @@
             <div class="row form-group">
                 <div class="col-md-12">
                     <div style="margin-top: 6px">
-                        <label class="cat-email">Tìm kiếm theo tên bài viết</label>
+                        <label class="cat-email">Tìm kiếm theo tên sản phẩm</label>
                         <input placeholder="Tìm kiếm theo tên bài viết" type="text" class="form-control" ng-enter="actions.filter()"  ng-model="filter.freeText">
                     </div>
                 </div>

@@ -80,7 +80,7 @@
                                 <!-- <i class="fa fa-user"></i> -->
                                 <i class="ti-pencil"></i>
                                 <span class="menu-title">
-                                    <b>Bài viết kinh doanh</b>
+                                    <b>Sản phẩm kinh doanh</b>
                                 </span>
                             </a>
                         </li>

@@ -6,6 +6,7 @@ use App\Models\CategoryModel;
 use App\Models\LinkModel;
 use App\Models\SupportModel;
 use App\Models\BusinessModel;
+use App\Models\PostBusinessModel;
 use Carbon\Carbon;
 use Illuminate\Support\Str;
 
@@ -15,6 +16,7 @@ class Home {
 	private $linkModel;
 	private $productModel;
 	private $businessModel;
+	private $postBusinessModel;
 
 	public function __construct(){
     	$this->categoryModel = new CategoryModel();
@@ -22,6 +24,7 @@ class Home {
     	$this->linkModel = new LinkModel();
     	$this->productModel = new ProductModel();
     	$this->businessModel = new BusinessModel();
+    	$this->postBusinessModel = new PostBusinessModel();
     }
 
 	public function getProduct(){
@@ -35,22 +38,27 @@ class Home {
 		return $getData;
 	}
 
+	public function getBusinessByCate($id){
+		$getData = $this->postBusinessModel->filterbusinessId($id)->buildCond()->orderBy('created_at', 'desc')->limit(3)->get();
+		return $getData;
+	}
+
 	public function getCateBusiness(){
-		$getData = $this->businessModel->where('parent_id','=',0)->get();
+		$getData = $this->businessModel->get();
 
 		return $getData;
 	}
 
 	public function getChild($parentId){
 
-		$getData = $this->businessModel->filterParentId($parentId)->buildCond()->get();
+		$getData = $this->categoryModel->filterParentId($parentId)->buildCond()->get();
 
 		return $getData;
 	}
 
 
 	public function getCategory(){
-		$getCategory = $this->categoryModel->get();
+		$getCategory = $this->categoryModel->where('parent_id','=',0)->get();
 
 		return $getCategory;
 	}

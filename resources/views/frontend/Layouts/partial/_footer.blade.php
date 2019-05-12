@@ -5,7 +5,7 @@
 				<h3>Trang chủ</h3>
 				<ul>
 					<li><a class="{{ request()->is('introduce') ? 'active-footer' : '' }}" href="{{ route('introduceF') }}" title="">Giới thiệu</a></li>
-					<li><a class="" href="" title="">Lĩnh vực kinh doanh</a></li>
+					<li><a class="{{ request()->is('business') ? 'active-footer' : '' }}" href="{{ route('businessF') }}" title="">Lĩnh vực kinh doanh</a></li>
 					@if(app('Home')->getCategory())
 						@php
 							$n = 0;

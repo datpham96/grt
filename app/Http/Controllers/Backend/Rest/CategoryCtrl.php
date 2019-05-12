@@ -30,6 +30,29 @@ class CategoryCtrl extends Controller
         return response()->json($resData);
     }
 
+    public function listParent(Request $request){
+
+        $resData = $this->categoryModel->filterParentId(0)->buildCond()->get();
+                       
+        return response()->json($resData);
+    }
+
+    public function categoryAllParent(Request $request){
+
+        $resData = $this->categoryModel->get();
+
+        $arrChild = [];
+        foreach ($resData as $val) {
+            if($val->parent_id > 0){
+                $arrChild[] = $val->parent_id;
+            }
+        }
+
+        $filtered = $resData->whereNotIn('id', $arrChild);
+        
+        return response()->json($filtered);
+    }
+
     public function insert(Request $request){
         //validate
         $validate = Validator::make($request->all(), [
@@ -43,10 +66,16 @@ class CategoryCtrl extends Controller
         }
 
         $name = $request->input('name','');
+        $parent_id = $request->input('parent_id','');
+        $parentId = 0;
+        if($parent_id != null || $parent_id != ''){
+            $parentId = $parent_id;
+        }
 
         //thuc hien insert
         $cateId = $this->categoryModel->insertGetId([
             "name" => $name,
+            "parent_id" => $parentId,
             "created_at" => Date('Y-m-d H:i:s'),
             "updated_at" => Date('Y-m-d H:i:s')
         ]);
@@ -69,6 +98,11 @@ class CategoryCtrl extends Controller
         }
 
         $name = $request->input('name','');
+        $parent_id = $request->input('parent_id','');
+        $parentId = 0;
+        if($parent_id != null || $parent_id != ''){
+            $parentId = $parent_id;
+        }
 
         $categoryInfo = $this->categoryModel
                             ->filterId($id)
@@ -79,6 +113,7 @@ class CategoryCtrl extends Controller
 
         //thuc hien update
         $categoryInfo->name = $name;
+        $categoryInfo->parent_id = $parentId;
         $categoryInfo->updated_at = Date('Y-m-d H:i:s');
         $categoryInfo->save();
 
@@ -99,8 +134,9 @@ class CategoryCtrl extends Controller
         }
 
         $productInfo = $this->productModel->filterCateId($id)->buildCond()->first();
+        $dataInfo = $this->categoryModel->filterParentId($id)->buildCond()->first();
 
-        if(!empty($productInfo)){
+        if(!empty($productInfo) || !empty($dataInfo)){
             return response()->json(['status' => StatusCodeConfig::CONST_STATUS_CHECK_ID_CATEGORY_EXISTS], 422);
         }
         //thuc hien xoa

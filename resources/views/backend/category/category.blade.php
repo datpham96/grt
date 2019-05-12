@@ -43,13 +43,15 @@
                         <tr>
                             <th>STT</th>
                             <th>Tên chuyên mục</th>
+                            <th>Tên chuyên mục cha</th>
                             <th>Hành động</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr ng-repeat="(key, val) in data.list">
                             <td>@{{ key + 1 }}</td>
-                            <td>@{{ val.name }}</td>
+                            <td>@{{ actions.formatChild(val.parent_id) }} @{{ val.name }}</td>
+                            <td>@{{ actions.formatParent(val.parent_id) }}</td>
                             <td>
                                 <i ng-click="actions.modalUpdate(val)" class="fa fa-pencil-square-o btn btn-info btn-icon btn-circle" aria-hidden="true"></i>
                                 <i ng-click="actions.delete(val.id)" class="btn btn-danger btn-icon btn-circle  fa fa-times" aria-hidden="true"></i>
@@ -58,7 +60,7 @@
                     </tbody>
                 </table>
                
-                <category-modal modal-dom="domData" form-data="formData" single-data="dataSingle" dom-avatar ret-func="actions.saveData(data,id)"></category-modal>
+                <category-modal modal-dom="domData" form-data="formData" single-data="dataSingle" dom-avatar ret-func="actions.saveData(data,id)" parent="listParent" ></category-modal>
             </div>
 
         </div>

@@ -72,6 +72,8 @@ Route::group(['prefix' => 'backend/rest', 'middleware'=> 'auth'], function () {
 	Route::post('/category', 'Backend\Rest\CategoryCtrl@insert');
 	Route::post('/category/{id}', 'Backend\Rest\CategoryCtrl@update');
 	Route::delete('/category/{id}', 'Backend\Rest\CategoryCtrl@delete');
+	Route::get('/categoryParent', 'Backend\Rest\CategoryCtrl@listParent');
+	Route::get('/categoryAllParent', 'Backend\Rest\CategoryCtrl@bcategoryAllParent');
 
 	//business
 	Route::get('/business', 'Backend\Rest\BusinessCtrl@list');
@@ -116,6 +118,11 @@ Route::get("/", "Frontend\Home\HomeCtrl@getHome")->name('home');
 //Category
 Route::get("/category/{id}", "Frontend\Category\CategoryCtrl@getCategoryDetail")->name('getCategoryDetail');
 
+//Business
+Route::get("/business", "Frontend\Business\BusinessCtrl@getBusiness")->name('businessF');
+Route::get("/business/{id}", "Frontend\Business\BusinessCtrl@getBusinessDetail")->name('getBusinessDetail');
+Route::get("/business/{cateId}/{id}", "Frontend\Business\BusinessCtrl@getCateBusinessDetail")->name('getCateBusinessDetail');
+
 //Product
 Route::get("/product", "Frontend\Product\ProductCtrl@getProduct")->name('product');
 Route::get("/product/{id}", "Frontend\Product\ProductCtrl@getProductDetail")->name('getProductDetail');
@@ -139,6 +146,3 @@ Route::get('modal/{modalName}', 'ModalCtrl@index')->name('viewModal');
 
 //file
 Route::get('/file/avatar', 'File\FileCtrl@avatar');
-
-//business
-Route::get("/business", "Frontend\Business\BusinessCtrl@getBusiness")->name('businessF');

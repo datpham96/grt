@@ -16,7 +16,7 @@
                                     <div style="margin-top: 5px; color: red;" ng-repeat="err in errors.name">@{{err}}</div>
                                 </div>
                             </div>
-                            <div class="form-group">
+                           <!--  <div class="form-group">
                                 <label class="col-sm-3 control-label" for="demo-is-inputsmall">Chuyên mục cha: </label>
                                 <div class="col-sm-9">
                                     <select class="form-control" data-width="100%" ng-model="getData.parent_id">
@@ -24,7 +24,7 @@
                                         <option ng-value="val.id" ng-repeat="(key, val) in listParent">@{{ val.name }}</option>
                                     </select> 
                                 </div>
-                            </div>
+                            </div> -->
                         </form>
                     </div>
                 </div>

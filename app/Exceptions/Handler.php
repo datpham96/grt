@@ -48,26 +48,26 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
-        if($this->isHttpException($exception))
-        {
-            switch ($exception->getStatusCode()) {
-                // not found
-                case 404:
-                    return response()->view('errors.404-page',[],404);
-                break;
-                case 403:
-                    return response()->view('errors.403-page',[],403);
-                default:
-                    return $this->renderHttpException($exception);
-                break;
-            }
-        }
+        // if($this->isHttpException($exception))
+        // {
+        //     switch ($exception->getStatusCode()) {
+        //         // not found
+        //         case 404:
+        //             return response()->view('errors.404-page',[],404);
+        //         break;
+        //         case 403:
+        //             return response()->view('errors.403-page',[],403);
+        //         default:
+        //             return $this->renderHttpException($exception);
+        //         break;
+        //     }
+        // }
 
-        if ($exception instanceof \ErrorException) {
-            return response()->view('errors.500-page', [], 500);
-        } else {
-            return parent::render($request, $exception);
-        }
+        // if ($exception instanceof \ErrorException) {
+        //     return response()->view('errors.500-page', [], 500);
+        // } else {
+        //     return parent::render($request, $exception);
+        // }
         return parent::render($request, $exception);
     }
 }

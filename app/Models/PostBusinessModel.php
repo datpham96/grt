@@ -35,4 +35,10 @@ class PostBusinessModel extends MyModel
         
         return $this;
     }
+
+    //relationship
+    public function categorys()
+    {
+        return $this->hasOne('App\Models\BusinessModel','id','business_id');
+    }
 }

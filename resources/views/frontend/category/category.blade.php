@@ -1,5 +1,5 @@
 @extends('frontend.Layouts.default')
-@section('title' , 'Trang chủ')
+@section('title' , 'Danh mục')
 
 @section('content')
 

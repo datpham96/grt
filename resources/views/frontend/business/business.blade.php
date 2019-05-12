@@ -1,11 +1,35 @@
 @extends('frontend.Layouts.default')
-@section('title' , 'Lĩnh vực kinh doanh')
+@section('title' , 'Danh mục')
 
 @section('content')
-<h2 class="title-special" style="text-align: left;"><span><a style="color: #333; font-weight: 700" class="hover-under" href="{{ url('') }}">Trang chủ</a> / Lĩnh vực kinh doanh</span></h2>
 
-<!-- List Post -->
-<div class="col-sm-9">
-	Đây là trang lĩnh vực kinh doanh
+<h2 class="title-special" style="text-align: left; font-size: 18px;"><a class="hover-under" style="color: #333; font-weight: 700" href="{{ url('') }}">Trang chủ</a> / <b>{{ $getInfoCateBusiness->name }}</b></h2>
+<div class="col-sm-9 product">
+	<div class="list-product">
+		@foreach($getlistCateBusiness as $val)
+		<div class="col-md-4">
+			<div class="box-product">
+				<div class="image">
+					<a href="{{ url('') }}/business/{{ $val->categorys->id }}/{{ $val->id }}" title=""><img src="{{ url('') }}/{{ $val->avatar }}" title="" alt="{{ $val->name }}" /></a>
+				</div>
+				<div class="name-pro">
+					<a href="{{ url('') }}/business/{{ $val->categorys->id }}/{{ $val->id }}" title="">{{ $val->name }}</a>
+				</div>
+				<div class="add-cart">
+					<a href="{{ url('') }}/business/{{ $val->categorys->id }}/{{ $val->id }}" title=""><i class="fa fa-angle-double-right"></i>Xem chi tiết</a>
+				</div>
+			</div>
+			<!-- END box-product -->	
+		</div>
+		@endforeach
+	</div>
+	<!-- END list-product -->
+	<div class="clearfix"></div>
+	<!-- Pagination -->
+	<div class="row pull-right">
+		{{ $getlistCateBusiness->links() }}
+	</div>		
+
+
 </div>
 @endsection
